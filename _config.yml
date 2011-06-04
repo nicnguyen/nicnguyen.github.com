@@ -3,7 +3,7 @@ auto:        false
 server:      false
 server_port: 4000
 base-url:    /
-host: file:///D:/work/nicnguyen.github.com/_site
+host: http://http://nicnguyen.github.com
 
 source:      .
 destination: ./_site
