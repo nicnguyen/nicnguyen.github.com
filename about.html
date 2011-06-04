@@ -1,0 +1,37 @@
+---
+layout: default
+title: About
+---
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $("#in").css({ opacity: 0.7 });
+        $("#fb").css({ opacity: 0.7 });
+        var overIn = function(){$("#in").fadeTo(300, 1);};
+        var outIn = function(){$("#in").fadeTo(300, 0.7);};
+        var overFb = function(){$("#fb").fadeTo(300, 1);};
+        var outFb = function(){$("#fb").fadeTo(300, 0.7);};
+        $("#in").hoverIntent({over:overIn,timeout:300, out:outIn});
+        $("#fb").hoverIntent({over:overFb,timeout:300, out:outFb});
+
+    });
+</script>
+
+<div id="about">
+    <p>
+    Yep. I'm a software developer. In my spare time, I enjoy thinking about new tools and research for object-oriented software and development.
+    This blog is about my current technical interests and projects.
+
+    I'm also a student of Kadampa Buddhism. My root-guru is Venerable Geshe Kelsang Gyatso.
+    </p>
+
+    <p>Nicholas Nguyen.</p>
+
+    <span id="social">Connect with me.
+        <p>
+            <a id="in" href="http://uk.linkedin.com/in/nicnguyen"> <img src="{{site.host}}/images/linkedin-32x32.png" alt="Linkedin" /></a>
+            <a id ="fb" href="http://www.facebook.com/nictonynguyen"> <img src="{{site.host}}/images/facebook_32x32.png" alt="Facebook" /></a>
+        </p>
+    </span>
+</div>

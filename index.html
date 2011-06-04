@@ -1,19 +1,12 @@
-<!DOCTYPE html>
+---
+layout: default
+title: Nicholas Nguyen's posts.
+---
 
-<html>
+{% for post in site.posts %}
 
-<head>
+<div class="post-title"><a href="{{site.host}}/{{ post.url }}">{{ post.title }}</a></div>
+<div class="post-date">Posted on {{ post.date | date_to_long_string }}.</div>
 
-<title>Nicholas Nguyen's pages</title>
+{% endfor %}
 
-</head>
-
- 
-
-<body>
-
-<h1>Nicholas Nguyen's blog pages.</h1>
-
-</body>
-
-</html>
