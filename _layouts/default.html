@@ -35,16 +35,18 @@
       #masthead {display:block; margin-left:auto;margin-right:auto;width:80%;position:relative;top:0px;max-width:922px;height:100%;margin-top:0;padding-top:0;border-top:0;}
       body {border-top:0;padding:0;margin:0;}
 
+      img, #banner, #menu-bar,ul#menu {padding:0;margin:0;border:0;}
+
       #banner {font-family:"Courier New", monospace;position:absolute;left:50px;top:30px;font-size:30px;font-weight:900;}
       #banner a {text-decoration:none; color:black;}
 
       #menu-bar {background-color:black;height:37px;width:922px;position:relative;border-bottom-right-radius:10px;border-bottom-left-radius:10px;}
       #menu-bar ul {left:0px;margin-left:0;padding-left:0;}
-      ul#menu {position:absolute;display:inline;top:-10px;}
+      ul#menu {position:absolute;display:inline;}
 
       #menu li {list-style:none;display:table-row;}
 
-      ul#menu > li {float:left; padding:0px;position:relative;top:-3px;}
+      ul#menu > li {float:left; padding:0px;position:relative;}
 
       ul#menu li:hover {background-color:rgb(49,91,131);}
       ul#menu li a {text-decoration:none;color:white;display:block;padding:10px 20px;}
@@ -85,7 +87,7 @@
 <body>
 <div id="masthead">
 <span id="banner"><a href="{{site.host}}/index.html">nicnguyen.github.com</a></span>
-<img src="{{site.host}}/images/55218_165832926781161_100000633653918_394025_4661064_o.jpg" alt="header">
+<img src="{{site.host}}/images/55218_165832926781161_100000633653918_394025_4661064_o.jpg" alt="header"/>
 <div id="menu-bar">
     <ul id="menu">
         <li id="projects-item">
