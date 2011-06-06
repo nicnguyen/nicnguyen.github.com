@@ -18,6 +18,13 @@
         $("#projects-item").hoverIntent({over:overSwitch,timeout:500, out:outSwitch});
 //        $("#gradient").css({ opacity: 0.7 });
 //        $("#block").css({ opacity: 0.7 });
+
+        //stick the footer at the bottom of the page if we're on an iPad/iPhone due to viewport/page bugs in mobile webkit
+        if(navigator.platform == 'iPad' || navigator.platform == 'iPhone' || navigator.platform == 'iPod')
+        {
+             $("#gradient").css("position", "static");
+             $("#block").css("position", "static");
+        };
     });
 
     var addthis_config = {
@@ -57,9 +64,12 @@
 
       ul#menu li ul li {padding:0px 0px;margin:0px 10px;}
 
-      ul#menu > li:hover {background:rgb(49,91,131);background:-webkit-gradient(linear, left top, left bottom, from(rgb(49,91,131)), to(rgb(126,173,217)));background:-moz-linear-gradient(top,rgb(49,91,131),rgb(126,173,217));
-                filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#315B83, endColorStr=#7EADD9,GradientType=0);
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#315B83, endColorstr=#7EADD9,GradientType=0)";
+      ul#menu > li:hover {
+        background:rgb(49,91,131);
+        background:-webkit-gradient(linear,left top, left bottom,from(rgb(49,91,131)),to(rgb(126,173,217)));
+        background:-moz-linear-gradient(top,rgb(49,91,131),rgb(126,173,217));
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#315B83,endColorStr=#7EADD9,GradientType=0);
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#315B83,endColorstr=#7EADD9,GradientType=0)";
       }
 
       #menu li a, #menu li, ul#menu, ul#projects, #menu li:hover, #menu li a:hover{-moz-border-radius: 10px; -webkit-border-radius:10px;border-radius: 10px;}
