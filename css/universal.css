@@ -130,7 +130,7 @@
              border-top-style:none;
       }
 
-      #content {position:relative;top:20px;height:60%;}
+      #content {position:relative;top:20px;}
 
       #gradient, #block {position:fixed;width:100%;}
       #socialize {position:absolute;margin:5px;right:50px;}
@@ -151,3 +151,13 @@
       .dsq-comment-text {font-size:87%;}
 
       #comments {position:relative;top:50px;}
+
+      .current-page {cursor:default;background-color:gray;
+            background:-webkit-gradient(linear,left top, left bottom,from(gray),to(black));
+            background:-moz-linear-gradient(top,gray,black);
+            background:-o-linear-gradient(top,gray,black);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#808080,endColorStr=#000000,GradientType=0);
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#808080,endColorstr=#000000,GradientType=0)";
+      }
+
+      .current-page-home {cursor:default;}

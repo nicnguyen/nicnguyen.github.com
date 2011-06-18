@@ -10,25 +10,9 @@
 <script type="text/javascript" src="{{site.host}}/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4dea1d8b5af22836"></script>
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        var overSwitch = function(){$("#projects").css("display","table");$("#page").fadeTo(200, 0.3);};
-        var outSwitch = function(){$("#projects").css("display","none");$("#page").fadeTo(100, 1);};
-        $("#projects-item").hoverIntent({over:overSwitch,timeout:500, out:outSwitch});
-    });
-
-    //stick the footer at the bottom of the page if we're on an iPad/iPhone due to viewport/page bugs in mobile webkit
-    if(navigator.platform == 'iPad' || navigator.platform == 'iPhone' || navigator.platform == 'iPod')
-    {
-         $("#gradient").css("position", "static");
-         $("#block").css("position", "static");
-    };
-
-    var addthis_config = {
-        ui_delay: 200
-    };
-</script>
+<script type="text/javascript" src="{{site.host}}/js/page/universal.js"></script>
 <link rel="stylesheet" type="text/css" href="{{site.host}}/css/universal.css" />
+
 </head>
 <body>
 
