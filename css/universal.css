@@ -158,3 +158,6 @@
       }
 
       .current-page-home {cursor:default;}
+
+      p:first-child:first-letter {font-size:170%;}
+      p + p:first-letter {font-size:120%;}
