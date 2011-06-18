@@ -132,17 +132,14 @@
 
       #content {position:relative;top:20px;}
 
-      #gradient, #block {position:fixed;width:100%;}
+      #block {position:fixed;width:600px;left:50%;margin-left:-300px;}
       #socialize {position:absolute;margin:5px;right:50px;}
-      #gradient {
-        background-color:black;height:15px;bottom:15px;
-        background:-webkit-gradient(linear, left top, left bottom, from(rgb(255,255,255)), to(rgb(0,0,0)));
-        background:-moz-linear-gradient(top,rgb(255,255,255),rgb(0,0,0));
-        background:-o-linear-gradient(top,rgb(255,255,255),rgb(0,0,0));
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#FFFFFF, endColorStr=#000000,GradientType=0);
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFF, endColorstr=#000000,GradientType=0)";
+
+      #block {height:15px;background-color:black;bottom:0px;
+
+        border-top-right-radius:15px;
+        border-top-left-radius:15px;
       }
-      #block {height:15px;background-color:black;bottom:0px;}
       #footnote {color:white;font-size:67%;text-align:center;}
 
       .post-title {font-size:90%;}
