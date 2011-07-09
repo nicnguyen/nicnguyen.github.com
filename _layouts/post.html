@@ -5,18 +5,19 @@
 <head>
 <title>{{page.title}}</title>
 
+
 <script type="text/javascript" src="{{site.host}}/js/jquery.min.js"></script>
 <script type="text/javascript" src="{{site.host}}/js/jquery.hoverIntent.minified.js"></script>
 <script type="text/javascript" src="{{site.host}}/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4dea1d8b5af22836"></script>
+<script type="text/javascript" src="{{site.host}}/js/page/universal.js"></script>
 <script type="text/javascript" src="http://deathtoie6.com/ie6-not-supported.js" ></script>
 
-<script type="text/javascript" src="{{site.host}}/js/page/universal.js"></script>
 <link rel="stylesheet" type="text/css" href="{{site.host}}/css/universal.css" />
-
+{{page.css}}
+{{page.js}}
 </head>
 <body>
-
 <div id="masthead">
 <span id="banner"><a href="{{site.host}}/index.html">nicnguyen.github.com</a></span>
 <div id="header">
@@ -34,9 +35,6 @@
                     <li>
                         <a href="{{site.host}}/projects/dharmavis.html">DharmaVis</a>
                     </li>
-                    <li>
-                        <a href="{{site.host}}/links.html">The twelve dependent-related links</a>
-                    </li>
                 </ul>
 
         </li>
@@ -44,9 +42,10 @@
             <a href="{{site.host}}/papers.html">Papers</a>
         </li>
         <li>
-            <a href="{{site.host}}/about.html">About</a>
+            <a href="{{site.host}}/contact.html">Contact</a>
         </li>
     </ul>
+</div>
 </div>
 <div id="page">
         <span id="title">{{page.title}}</span>
@@ -59,14 +58,14 @@
             {{content}}
         </div>
 
-    <div id="comments">
+      <div id="comments">
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'nicnguyen'; // required: replace example with your forum shortname
 
             // The following are highly recommended additional parameters. Remove the slashes in front to use.
-            var disqus_identifier = '{{first_post}}';
+            var disqus_identifier = '{{page.disqus}}';
             // var disqus_url = 'http://example.com/permalink-to-page.html';
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -79,8 +78,6 @@
         <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
     </div>
-
-</div>
 </div>
 <div id="block">
     <div id="footnote">Photography by Erica Kim. Website created by Nicholas Nguyen.</div>

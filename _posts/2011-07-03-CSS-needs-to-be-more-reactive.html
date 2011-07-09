@@ -1,0 +1,111 @@
+---
+layout: post
+title: CSS needs to be more reactive.
+disqus_id: first_post
+css: <link rel="stylesheet" type="text/css" href="file://D:\work\nicnguyen.github.com/css/css-reactive-post.css" />
+js: <script type="text/javascript" src="file://D:\work\nicnguyen.github.com/js/page/css-reactive-post.js"></script>
+disqus: css_reactive
+---
+
+<p>
+    Binding is such a common pattern in GUI programming that every language has its own solution.
+</p>
+<p>
+    Declarative binding is obviously very appealing and
+    functional reactive programming looks like a very cool technique. Flapjax, the <a href="http://www.flapjax-lang.org">JavaScript API</a>,
+    and also, <a href="http://lamp.epfl.ch/~imaier/"> scala.react</a> the embedded DSL for Scala, both provide event streams as first class values.
+</p>
+<p>
+    Basically, the idea seems to be to convert a raw event stream into a dynamic behaviour, with dataflow dependencies
+    thrown into the mix.
+<p>
+    Anyway, CSS 2.1 already has dynamic pseudo-classes such as <span class="code-inline">:hover</span>, <span class="code-inline">:active</span> and
+    <span class="code-inline">:focus</span>. So why not step it up a level?
+    Dynamic pseudo-classes have already started a trend of replacing Javascript with declarative CSS.
+    I hope that trend will continue, so that one day, client-side Javascript will be unnecessary.
+</p>
+<p>
+    A common pattern with JQuery/ JavaScript is binding the events from one DOM element to a dynamic behaviour of another DOM element.
+    For example, this fragment of JQuery code binds the hover events received from on a source to a dynamic style on the target:
+</p>
+    <div class="code" style="width:500px;">
+    var overAndOut = function(){$("#target").toggleClass("dynamic-style")};
+        </div>
+        <div class="code" style="width:500px;">
+    $("#source").hover(overAndOut, overAndOut)
+    </div>
+<p>
+    The effect is the target receives the dynamic class-style while the user hovers over the source.
+
+    Here's an application of this pattern with a classical list menu - below on the left.
+</p>
+
+      <div id="menu-bar-demo">
+            <div id="menublock-demo">
+                <div id="m_li1">
+
+                </div>
+                <div id="m_li2">
+
+                </div>
+                <div id="m_li3">
+
+                </div>
+                <div id="m_li4">
+
+                </div>
+            </div>
+            <ul id="menu-demo">
+                <li id="li1">
+                    <a>iPhone</a>
+                </li>
+                <li id="li2">
+                    <a>Pencil Sharpening</a>
+                </li>
+                <li id="li3">
+                    <a>Gallery</a>
+                </li>
+                <li id="li4">
+                    <a>Frisbee</a>
+                </li>
+            </ul>
+        </div>
+
+
+<p>
+    There is no way to implement this menu today with pure CSS and without JavaScript.
+</p>
+<p>
+    CSS seems to be already primed for this kind of binding, using the descendant selector.
+    This is a common pattern in coding CSS menus and looks more or less like this:
+
+    <div class="code">#source :hover #target .dynamic-style</div>
+</p>
+<p>
+    The problem, though, is that in the example menu above, the targets aren't descendants of the sources.
+    But what about CSS 3.0 sibling selectors for adjacent and general siblings?
+    The problem with that is targets that need to be selected occur before the sources in the document. The sibling selectors are limited to
+    matching following elements and cannot match preceding siblings. The general sibling selector isn't general enough.
+</p>
+<p>
+    We already know CSS selectors do not have a parent or a previous-sibling selector, like XPath has the parent and previous-sibling axes.
+    But, why not allow full connectivity between DOM nodes with CSS selectors when dynamic pseudo-classes are needed?
+   CSS selectors are limited to forwards-only selection - that is - forwards in the document-order.
+   This is great for stream processing the webpage in a single pass over the stream
+   while the page is being loaded. But it is bad news for the needs of dynamic behaviour after the page has loaded.
+</p>
+<p>
+   CSS can certainly be extended with new operators for the parent and previous sibling selectors without interfering with the existing syntax.
+   Perhaps the symbols <span class="code-inline">^</span> and <span class="code-inline"><-</span> could be used for parent and previous sibling selectors, respectively.
+   Then, to maintain fast page-loading times, these selectors are only effective after a dynamic pseudo-class has been applied. For example, something like this:
+    <div class="code">
+        #source :hover <- #target .dynamic-style
+    </div>
+</p>
+<p>
+    In general, adding new features to a language, retrospectively, is not the ideal way to design a language.
+
+    So perhaps, a research idea is to design the core of a purely declarative language for CSS,
+    which incorporates all the necessary features for GUI programming, including binding behaviours to events, data flow, styling, state machines.
+    The scope isn't well-defined yet, so a benchmark of use cases would help.
+</p>

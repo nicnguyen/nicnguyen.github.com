@@ -142,8 +142,8 @@
       }
       #footnote {color:white;font-size:67%;text-align:center;}
 
-      .post-title {font-size:90%;}
-      .post-date {font-size:80%;font-style:italic;}
+      .post-title {font-size:90%;padding:5px 0 5px 0;}
+      .post-date {font-size:80%;font-style:italic;margin-left:10px;}
 
       .dsq-comment-text {font-size:87%;}
 
@@ -161,3 +161,7 @@
 
       p:first-child:first-letter {font-size:170%;}
       p + p:first-letter {font-size:120%;}
+
+      .code {font-family:"Courier New", monospace;font-size:85%;text-align:left;display:block;margin:0px auto;width:300px;font-weight:800;}
+      .code-inline {font-family:"Courier New", monospace;}
+
