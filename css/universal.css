@@ -142,8 +142,8 @@
       }
       #footnote {color:white;font-size:67%;text-align:center;}
 
-      .post-title {font-size:90%;padding:5px 0 5px 0;}
-      .post-date {font-size:80%;font-style:italic;margin-left:10px;}
+      .post-title {font-size:90%;padding-top:5px;}
+      .post-date {font-size:80%;font-style:italic;margin-left:10px;padding-bottom:5px;}
 
       .dsq-comment-text {font-size:87%;}
 
