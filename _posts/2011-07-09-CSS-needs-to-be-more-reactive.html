@@ -8,18 +8,20 @@ disqus: css_reactive
 ---
 
 <p>
-    Binding is such a common pattern in GUI programming that every language has its own solution.
+    Binding is such a common pattern for interactive programming. Every programming language seems to have its own unique solution.
+    Even Flex features declarative bindings and JavaFX makes use of data flow dependencies to trigger reactions.
+
+    Don't we all just want to program bindings and reactions declaratively? When is programming tech going to catch up for the rest of us?
 </p>
 <p>
-    Declarative binding is obviously very appealing and
-    functional reactive programming looks like a very cool technique. Flapjax, the <a href="http://www.flapjax-lang.org">JavaScript API</a>,
-    and also, <a href="http://lamp.epfl.ch/~imaier/"> scala.react</a> the embedded DSL for Scala, both provide event streams as first class values.
+    Functional reactive programming promises so much to me. Flapjax, the <a href="http://www.flapjax-lang.org">JavaScript API</a>,
+    and also, <a href="http://lamp.epfl.ch/~imaier/"> scala.react</a> the embedded DSL for Scala, have event streams as first class values.
 </p>
 <p>
-    Basically, the idea seems to be to convert a raw event stream into a dynamic behaviour, with dataflow dependencies
-    thrown into the mix.
+    The idea seems to be to convert a raw event stream into a dynamic behaviour, with dataflow dependencies
+    thrown in, to respond to events without resorting to the inversion of control - a.k.a the observer pattern.
 <p>
-    Anyway, CSS 2.1 already has dynamic pseudo-classes such as <span class="code-inline">:hover</span>, <span class="code-inline">:active</span> and
+    Anyway, back on to the topic, CSS 2.1 already has dynamic pseudo-classes such as <span class="code-inline">:hover</span>, <span class="code-inline">:active</span> and
     <span class="code-inline">:focus</span>. So why not step it up a level?
     Dynamic pseudo-classes have already started a trend of replacing Javascript with declarative CSS.
     I hope that trend will continue, so that one day, client-side Javascript will be unnecessary.
