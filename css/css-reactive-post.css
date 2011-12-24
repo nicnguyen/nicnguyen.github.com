@@ -40,10 +40,9 @@
       }
 
       #menublock-demo {
-        border-top-right-radius:15px;
-        border-top-left-radius:15px;
-        border-bottom-right-radius:15px;
-        border-bottom-left-radius:15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        border-radius: 15px;
       }
 
       #menublock-demo {float:left;height:88px;width:30px;}
@@ -51,10 +50,9 @@
       #menublock-demo div {
         height:25%;
         width:100%;
-        border-top-right-radius:50%;
-        border-top-left-radius:50%;
-        border-bottom-right-radius:50%;
-        border-bottom-left-radius:50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
         opacity:0.6;
         filter:alpha(opacity=60);
       }
