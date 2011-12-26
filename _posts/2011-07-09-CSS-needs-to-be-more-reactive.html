@@ -23,9 +23,8 @@ disqus: css_reactive
     thrown in, to respond to events without resorting to the inversion of control - a.k.a - the observer pattern.
     See also Scala's actor model for reactive programming without shared memory and without inversion of control.
 <p>
-    Anyway, back on to the topic, CSS 2.1 already has dynamic pseudo-classes such as <span class="code-inline">:hover</span>, <span class="code-inline">:active</span> and
-    <span class="code-inline">:focus</span>. So why not step it up a level?
-    Dynamic pseudo-classes have already started a trend of replacing Javascript with declarative CSS.
+    CSS 2.1 has dynamic pseudo-classes such as <span class="code-inline">:hover</span>, <span class="code-inline">:active</span> and
+    <span class="code-inline">:focus</span>. These pseudo classes add a little reactivity to CSS.
 </p>
 <p>
     A common pattern with JQuery/ JavaScript is binding the events from one DOM element to a dynamic behaviour of another DOM element.
@@ -76,7 +75,7 @@ disqus: css_reactive
 
 
 <p>
-    There doesn't seem to be a way to implement this menu with only CSS without JavaScript.
+    There isn't really a way to implement this menu with only CSS without JavaScript.
 </p>
 <p>
     CSS seems to be already primed for this kind of binding, using the descendant selector.
@@ -106,7 +105,7 @@ disqus: css_reactive
     </div>
 </p>
 <p>
-    I think a research idea is to design the core of a purely declarative language for CSS,
+    I think a worthwhile research idea is to design the core of a purely declarative language for CSS,
     which incorporates all the necessary features for GUI programming.
     Part of the problem is that the scope isn't yet well-defined, so a benchmark of lots of examples would help. Perhaps timed CCS could be a starting point for more reactive style sheets.
 </p>
