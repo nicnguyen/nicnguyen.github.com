@@ -4,16 +4,30 @@ title: SPath
 ---
 
 <p>
-SPath is an extensible framework for defining embedded, XPath-like query languages in Scala.
-Extensibility is supported in two directions. Firstly the axis-relations are extensible.
+SPath is an extensible framework for defining XPath-like query languages in Scala with an internal domain-specific language.
+Extensibility is supported in three directions. Firstly the axis-relations are extensible (an axis defines a relation between document-tree nodes).
 Second, SPath is extensible over the domain of the data being queried.
-Being able to define new axis-relations as functions enables programmers to specialise node-relations.
+Thirdly, the vocabulary of the DSL can be extended thanks to Scala's implicit conversions.
+Being able to define new axis-relations as functions enables programmers to write queries with domain-specific axes.
 Being extensible over the domain of the node types of the data means that the language can be reused for
-any kind of tree data-structure that has been implemented with the composite design-pattern. What this means, specifically,
-is that SPath needs to know, simply, the child-relation and sibling-order of your trees.
+any kind of tree data-structure that has been implemented with the composite design-pattern. Specifically,
+SPath needs to know about the child-relation and sibling-order of its document trees.
 </p>
 
 <p>
 The SPath framework has extensions for the GUI toolkit, Swing, and the XML APIs, org.w3c.dom.Node and scala.xml.Node.
 Other extensions are possible, such as for JSON or YAML.
+</p>
+
+<p>
+  <b>Publication</b>
+  <div>SPath: an extensible query-language for Scala (2011)</div>
+  <div>Nicholas Nguyen</div>
+  Available from the <a href="http://www.jot.fm/contents/issue_2011_01/article13.html">Journal of Object Technology</a>
+</p>
+
+<p>
+    <b>Source code</b>
+    <div>The full open-source code is on <a href="https://github.com/nicnguyen/SPath">github</a>.</div>
+    Clone git@github.com:nicnguyen/SPath.git.
 </p>
