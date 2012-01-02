@@ -59,6 +59,14 @@
         border-radius: 5px;
     }
 
+    #rss {
+        right:55px;
+        position:absolute;
+        display:block;
+        top:10px;
+
+    }
+
       a img {border:none;}
       body {
         font-family:Verdana, monopsace;
