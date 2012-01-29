@@ -35,7 +35,7 @@ description: Reactive GUI in Java.
 
     The class InputEventSream, shown just below, is a subject (observable) capable of receiving events of the generic type I.
     The bind method creates an output event stream that is capable of sending events of type I to the input stream that receives the bind method invocation.
-    Bind takes a filter that converts the inputs values of type I to output values of type O. An identity filter can be used when no conversion is required.
+    Bind takes a filter that converts the output values of type O to input values of type I. An identity filter can be used when no conversion is required.
 
     <span class="code">
 
