@@ -19,7 +19,7 @@ description: Reactive GUI in Java.
     </li>
     </ul>
 
-    Another side goal is to implement the automata with a variation of the state design-pattern i.e using Java's anonymous inner classes to capture the local scope.
+    Another side goal is to implement the automata with a variation of the state design-pattern i.e. using Java's anonymous inner classes to capture the local scope.
     The idea is to end up with a state machine that looks as much possible like a sequential program and not the typical fragments of code across separate state classes.
 
 </p>
@@ -28,7 +28,7 @@ description: Reactive GUI in Java.
 
     An event stream can be either an input event stream or an output event stream.
 
-    Reactions to events on a stream are implemented with pub/sub i.e the observer design pattern.
+    Reactions to events on a stream are implemented with pub/sub i.e. the observer design pattern.
 
     An event stream is also an observable. An input event stream can be bound to a new output event stream,
     by adding an observer to the output stream, which notifies the input stream with streamed values.
@@ -60,7 +60,8 @@ description: Reactive GUI in Java.
 
 <p>
 
-    A state machine is parameterised by the generic types I and O for the types of the input and output values that is capable of consuming and producing, respectively:
+    A state machine is parameterised by the generic types I and O for the types of the input and output values for which the machine is
+    capable of consuming and producing, respectively:
 
     <span class="code">
         class Machine&ltI, O&gt {
@@ -78,7 +79,7 @@ description: Reactive GUI in Java.
         }
     </span>
 
-    The machine processes an input event with a value of type I by delegating to class State&ltI&gt.
+    The machine processes an input event with a value of type I by delegating to the class State&ltI&gt.
     The state class processes the event and changes the state of the machine, through invoking the setState method.
     This is done using deeply nested anonymous inner classes. Thus, any states higher up within the lexical scope can be set as the current state, provided that
     they are declared with the final keyword-modifier.
@@ -89,7 +90,7 @@ description: Reactive GUI in Java.
     I have implemented a simple calculator using these machine and event stream classes.
     The calculator-machine's generic types I and O are instantiated
     with InputEnum and BigDecimal, respectively. That is, the calculator machine takes inputs that are digits, 0 to 9, operators ., +, -, /, *, commands = and C (for clear).
-    The InputEnum class is a Java enum to enable pattern matching - Java style. The calculator machine produces BigDecimal output values.
+    The InputEnum class is a Java enum to enable pattern matching, Java style. The calculator machine produces BigDecimal output values.
 
 </p>
 <p>
