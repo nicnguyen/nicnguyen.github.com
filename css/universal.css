@@ -238,6 +238,9 @@
       p:first-child:first-letter {font-size:170%;}
       p + p:first-letter {font-size:120%;}
 
-      .code {font-family:"Courier New", monospace;font-size:85%;text-align:left;display:block;margin:0px auto;width:300px;font-weight:800;}
+      .code {white-space:pre;font-family:"Courier New", monospace;font-size:85%;text-align:left;display:block;margin-left:auto;margin-right:auto;;font-weight:800;}
       .code-inline {font-family:"Courier New", monospace;}
+
+      .figure {display:block;margin-right:auto;margin-left:auto;}
+
 
