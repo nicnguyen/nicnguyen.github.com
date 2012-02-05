@@ -11,7 +11,7 @@ description: CSS is nice but could be more interactive.
 <p>
     Binding the view with the model in the Model-View-Conroller pattern is a common problem for interactive programming. Every programming language seems to have its own solution for reactivity.
     For a long time the observer pattern which is based on the publish/subscribe principle has been the status quo.
-    Flex features has some kind of declarative binding and JavaFX uses data flow dependencies to trigger reactions.
+    Flex features has some kind of binding feature and JavaFX uses data flow dependencies to trigger reactions between values.
 </p>
 <p>
     Functional reactive programming (FRP) is based on signal processing and modelling continuous events. Flapjax, the <a href="http://www.flapjax-lang.org">JavaScript API</a>,
@@ -21,8 +21,7 @@ description: CSS is nice but could be more interactive.
 </p>
 <p>
     The idea of FRP seems to be to convert a raw event stream, i.e values over time, into a dynamic behaviour, with dataflow dependencies
-    thrown in, to respond to events without resorting to the inversion of control - a.k.a - the observer pattern.
-    See also Scala's actor model for reactive programming without shared memory and without inversion of control.
+    to respond to events without resorting to the inversion of control - a.k.a - the observer pattern.
 <p>
     CSS 2.1 has dynamic pseudo-classes such as <span class="code-inline">:hover</span>, <span class="code-inline">:active</span> and
     <span class="code-inline">:focus</span>. These pseudo classes add a little reactivity to CSS.
