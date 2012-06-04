@@ -238,8 +238,8 @@
       p:first-child:first-letter {font-size:170%;}
       p + p:first-letter {font-size:120%;}
 
-      .code {white-space:pre;font-family:"Courier New", monospace;font-size:85%;text-align:left;display:block;margin-left:auto;margin-right:auto;;font-weight:800;}
-      .code-inline {font-family:"Courier New", monospace;}
+      .code {white-space:pre;font-family:"Courier New", monospace;font-size:85%;text-align:left;display:block;margin-left:auto;margin-right:auto;font-weight:800;}
+      .code-inline {font-family:"Courier New", monospace;font-weight:800;}
 
       .figure {display:block;margin-right:auto;margin-left:auto;}
 
