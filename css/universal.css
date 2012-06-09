@@ -208,11 +208,10 @@
 
       #content {position:relative;top:40px;}
 
-      #block {position:fixed;width:600px;left:50%;margin-left:-300px;opacity:0.6;filter:alpha(opacity=60)}
+      #block {width:800px;margin:auto;opacity:0.6;filter:alpha(opacity=60)}
       #socialize {position:absolute;margin:5px;right:50px;}
 
-      #block {height:15px;background-color:black;bottom:0px;
-
+      #block {height:50px;background-color:black;
         border-top-right-radius:15px;
         border-top-left-radius:15px;
       }
