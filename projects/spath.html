@@ -1,22 +1,19 @@
 ---
 layout: default
-title: SPath
+title: NOXML
 ---
 
 <p>
-SPath is an extensible framework for defining XPath-like query languages in Scala with an internal domain-specific language.
-Extensibility is supported in three directions. Firstly the axis-relations are extensible (an axis defines a relation between document-tree nodes).
-Second, SPath is extensible over the domain of the data being queried.
-Thirdly, the vocabulary of the DSL can be extended thanks to Scala's implicit conversions.
-Being able to define new axis-relations as functions enables programmers to write queries with domain-specific axes.
-Being extensible over the domain of the node types of the data means that the language can be reused for
-any kind of tree data-structure that has been implemented with the composite design-pattern. Specifically,
-SPath needs to know about the child-relation and sibling-order of its document trees.
+NOXML is my project for alternative processing tools for XML and ideally, related data formats such as JSON, YAML and so on and so forth.
+My embedded domain specific language, called SPath, shows that it is not hard to implement a better query language for XML in Scala - a
+nice object oriented and functional programming language with strong typing enforced at compile time.
+
+In future I want to implement SPath on succinct XML data structures.
+
 </p>
 
 <p>
-The SPath framework has extensions for the GUI toolkit, Swing, and the XML APIs, org.w3c.dom.Node and scala.xml.Node.
-Other extensions are possible, such as for JSON or YAML.
+
 </p>
 
 <p>
@@ -28,6 +25,6 @@ Other extensions are possible, such as for JSON or YAML.
 
 <p>
     <b>Source code</b>
-    <div>The full open-source code is on <a href="https://github.com/nicnguyen/SPath">github</a>.</div>
-    Clone git@github.com:nicnguyen/SPath.git.
+    <div>Available in my GIT repository. I still need to submit the jars to Maven central repository (TODO).</div>
+
 </p>
