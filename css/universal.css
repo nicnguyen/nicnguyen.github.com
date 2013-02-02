@@ -81,7 +81,7 @@
         font-weight:500;
       }
 
-      #masthead {
+      #bannerTop {
         display:block;
         margin-left:auto;margin-right:auto;
         width:922px;
@@ -92,7 +92,10 @@
         margin-top:0;
         padding-top:0;
         border-top:0;
+        background-image: url('../images/55218_165832926781161_100000633653918_394025_4661064_o.jpg');
+        height:254px;
       }
+
       #page {
         display:block;
         margin-left:auto;margin-right:auto;
@@ -108,17 +111,44 @@
 
       body {border-top:0;padding:0;margin:0;}
 
-      img, #banner, #menu-bar, ul#menu, #header {padding:0;margin:0;border:0;}
+      img, #banner, ul#menu, #header {padding:0;margin:0;border:0;}
 
-      #banner {-ms-transform:skewY(-5deg);-moz-transform:skewY(-5deg);-o-transform:skewY(-5deg);transform:skewY(-5deg);-webkit-transform:skewY(-5deg);position:absolute;left:50px;top:30px;font-size:30px;font-weight:900;}
+      #banner {
+        -ms-transform:skewY(-5deg);
+        -moz-transform:skewY(-5deg);
+        -o-transform:skewY(-5deg);
+        transform:skewY(-5deg);
+        -webkit-transform:skewY(-5deg);
+        position:relative;
+        left:50px;top:30px;
+        font-size:30px;
+        font-weight:900;
+        border: 8px black solid;
+        width:301px;
+      }
+
       #banner a {font-size:100%;font:2em/1 'LeagueGothicRegular', sans-serif;text-decoration:none; color:black;}
 
-      #sub-banner {text-decoration:none;-ms-transform:skewY(-5deg);-moz-transform:skewY(-5deg);-o-transform:skewY(-5deg);transform:skewY(-5deg);-webkit-transform:skewY(-5deg);font-size:30%; font:200% 'LeagueGothicRegular', sans-serif;position:absolute;left:100px;top:85px;}
+      #sub-banner {
+        text-decoration:none;
+        -ms-transform:skewY(-5deg);
+        -moz-transform:skewY(-5deg);
+        -o-transform:skewY(-5deg);
+        transform:skewY(-5deg);
+        -webkit-transform:skewY(-5deg);
+        font-size:30%;
+        font:200% 'LeagueGothicRegular', sans-serif;
+        position:relative;
+        left:240px;
+        top:17px;
+        width: 161px;
+      }
 
 
       #header, img {vertical-align:bottom;}
 
       #menu-bar {
+        margin:auto;
         vertical-align:top;
         background-color:black;
         height:36px;
@@ -132,7 +162,7 @@
         -moz-border-radius-bottomleft: 10px;
       }
 
-      #menu-bar ul {left:0px;margin-left:0;padding-left:0;}
+      #menu-bar ul {left:0px;margin:auto;padding-left:0;}
 
       ul#menu {position:absolute;display:inline;}
 
