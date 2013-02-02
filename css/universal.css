@@ -114,11 +114,11 @@
       img, #banner, ul#menu, #header {padding:0;margin:0;border:0;}
 
       #banner {
-        -ms-transform:skewY(-5deg);
-        -moz-transform:skewY(-5deg);
-        -o-transform:skewY(-5deg);
-        transform:skewY(-5deg);
-        -webkit-transform:skewY(-5deg);
+        -ms-transform:skewY(-12deg);
+        -moz-transform:skewY(-12deg);
+        -o-transform:skewY(-12deg);
+        transform:skewY(-12deg);
+        -webkit-transform:skewY(-12deg);
         position:relative;
         left:50px;top:30px;
         font-size:30px;
@@ -131,11 +131,11 @@
 
       #sub-banner {
         text-decoration:none;
-        -ms-transform:skewY(-5deg);
-        -moz-transform:skewY(-5deg);
-        -o-transform:skewY(-5deg);
-        transform:skewY(-5deg);
-        -webkit-transform:skewY(-5deg);
+        -ms-transform:skewY(-14deg);
+        -moz-transform:skewY(-14deg);
+        -o-transform:skewY(-14deg);
+        transform:skewY(-14deg);
+        -webkit-transform:skewY(-14deg);
         font-size:30%;
         font:200% 'LeagueGothicRegular', sans-serif;
         position:relative;
