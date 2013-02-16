@@ -1,10 +1,13 @@
     @font-face {
         font-family: 'LeagueGothicRegular';
-        src: url('../fonts/League_Gothic-webfont.eot');
-        src: url('../fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
-             url('../fonts/League_Gothic-webfont.woff') format('woff'),
-             url('../fonts/League_Gothic-webfont.ttf') format('truetype'),
-             url('../fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+        src: url('../fonts/League_Gothic-webfont.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Psycho';
+        src: url('../fonts/Needleteeth_Psycho.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
@@ -12,6 +15,13 @@
     h1 {
       font-size:500%;
       font:5em/1 'LeagueGothicRegular', sans-serif;
+    }
+
+    #warning {
+        font: 500% 'Psycho';
+        color:white;
+        text-align:center;
+        padding:10px 0 10px 0;
     }
 
     #posts {
@@ -105,7 +115,6 @@
         max-width:800px;
         height:100%;
         margin-top:0;
-        padding-top:0;
         border-top:0;
       }
 
@@ -119,12 +128,11 @@
         border-bottom: 10px black solid;
         border-left: 4px black solid;
         border-right: 4px black solid;
-
-        -ms-transform:skewY(-15deg);
-        -moz-transform:skewY(-15deg);
-        -o-transform:skewY(-15deg);
-        transform:skewY(-15deg);
-        -webkit-transform:skewY(-15deg);
+        -ms-transform:scaleY(1.35) skewY(-9deg);
+        -moz-transform:scaleY(1.35) skewY(-9deg);
+        -o-transform:scaleY(1.35) skewY(-9deg);
+        transform:scaleY(1.35) skewY(-9deg);
+        -webkit-transform:scaleY(1.35) skewY(-9deg);
         position:relative;
         left:30px;top:50px;
         font-size:30px;
@@ -136,16 +144,16 @@
 
       #sub-banner {
         text-decoration:none;
-        -ms-transform:skewY(-18deg);
-        -moz-transform:skewY(-18deg);
-        -o-transform:skewY(-18deg);
-        transform:skewY(-18deg);
-        -webkit-transform:skewY(-18deg);
+        -ms-transform:skewY(-16deg);
+        -moz-transform:skewY(-16deg);
+        -o-transform:skewY(-16deg);
+        transform:skewY(-16deg);
+        -webkit-transform:skewY(-16deg);
         font-size:30%;
         font:200% 'LeagueGothicRegular', sans-serif;
         position:relative;
         left:210px;
-        top:23px;
+        top:43px;
         width: 161px;
       }
 
@@ -232,7 +240,7 @@
       }
 
       #title {font-size:190%;}
-      #page {position:relative;padding:50px 50px 100px; 50px;height:100%;
+      #page {position:relative;padding:50px 50px 500px; 50px;height:100%;
              -moz-border-radius: 10px;
              -webkit-border-radius:10px;
              border-radius: 10px;
@@ -246,7 +254,7 @@
       #block {width:800px;margin:auto;opacity:0.6;filter:alpha(opacity=60)}
       #socialize {position:absolute;margin:5px;right:50px;}
 
-      #block {height:50px;background-color:black;
+      #block {height:110px;background-color:black;
         border-top-right-radius:15px;
         border-top-left-radius:15px;
       }
