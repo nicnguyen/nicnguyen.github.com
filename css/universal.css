@@ -21,7 +21,7 @@
         font: 500% 'Psycho';
         color:white;
         text-align:center;
-        padding:10px 0 10px 0;
+        padding:0px 0 10px 0;
         -ms-transform:scaleX(1.3);
         -moz-transform:scaleX(1.3);
         -o-transform:scaleX(1.3);
@@ -259,7 +259,7 @@
       #block {width:800px;margin:auto;opacity:0.6;filter:alpha(opacity=60)}
       #socialize {position:absolute;margin:5px;right:50px;}
 
-      #block {height:110px;background-color:black;
+      #block {height:140px;background-color:black;
         border-top-right-radius:15px;
         border-top-left-radius:15px;
       }
