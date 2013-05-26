@@ -294,3 +294,9 @@
       .sub {
         vertical-align:sub;
       }
+
+      #screenshots img {
+         width:43%;
+         padding:10px;
+         float:left;
+      }
