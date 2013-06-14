@@ -3,16 +3,6 @@ layout: default
 title:
 disqus: posts_page
 ---
-<script type="text/javascript">
-$(document).ready(function() {
-    $('#Geshe_Kelsang').twitterfeed('Geshe_Kelsang', {
-        limit: 5, tweeticon:false, tweettime:false, replies:false, tweetname:false
-    });
-    $('#Modern_Buddhism').twitterfeed('ModernBuddhism', {
-        limit: 5, tweeticon:false, tweettime:false, replies:false, tweetname:false
-    });
-});
-</script>
 
 <div id="posts">
 {% for post in site.posts %}
@@ -23,6 +13,13 @@ $(document).ready(function() {
 {% endfor %}
 </div>
 
-<div id = "Geshe_Kelsang"></div>
 
-<div id = "Modern_Buddhism"></div>
+<div id = "Geshe_Kelsang">
+    <a class="twitter-timeline" href="https://twitter.com/Geshe_Kelsang" data-widget-id="345675810100887552">Tweets by @Geshe_Kelsang</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+
+<div id = "Modern_Buddhism">
+    <a class="twitter-timeline" href="https://twitter.com/ModernBuddhism" data-widget-id="345677596866015233">Tweets by @ModernBuddhism</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
