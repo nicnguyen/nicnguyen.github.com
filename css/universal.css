@@ -318,10 +318,11 @@
 
       ul.contents a {
         text-decoration:none;
+
       }
 
       ul.contents li {
-        padding:5px;
+        padding:2px;
         list-style-type:square;
       }
 
