@@ -28,14 +28,11 @@ description: Programming JavaScript user interfaces with linear temporal logic.
     <span class="subtitle"><a name="intro">Introduction</a></span>
 </p>
 <p>
-This post presents an embedded domain specific language (DSL) that allows the programmer to focus on the behavioural logic of the user interface
-that is modeled well by finite state machines (FSMs) but without being directly exposed to the machinery of states and transitions.
-The DSL has a <a class='reference' href="http://martinfowler.com/bliki/FluentInterface.html">fluent interface</a> that builds up, internally, expressions of linear temporal logic.
-The expressions are then translated into compact FSMs.
-The translation phase binds event listeners to nodes in the document object model (DOM),
-which will drive the FSM.
-The programmer can therefore specify and at the same time implement stateful behaviour
-very concisely and often with a single statement of the DSL.
+So I've come up with this embedded domain specific language (DSL) for writing state machines in JavaScript.
+The DSL has a <a class='reference' href="http://martinfowler.com/bliki/FluentInterface.html">fluent interface</a> that builds up, internally, expressions of linear temporal logic (think of these as regular expressions).
+The expressions are then translated into state machines.
+The translation phase binds event listeners to nodes in the document object model (DOM), which will notify the state machine of new inputs and may cause a state transition.
+The programmer can therefore specify and at the same time implement stateful behaviour concisely and often with a single statement of the DSL.
 <p>
 
 <p>
