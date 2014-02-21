@@ -24,7 +24,9 @@ description: Programming JavaScript user interfaces with linear temporal logic.
     </ul>
 </p>
 
-<span class="subtitle"><a name="intro">Introduction</a></span>
+<p>
+    <span class="subtitle"><a name="intro">Introduction</a></span>
+</p>
 <p>
 This post presents an embedded domain specific language (DSL) that allows the programmer to focus on the behavioural logic of the user interface
 that is modeled well by finite state machines (FSMs) but without being directly exposed to the machinery of states and transitions.
@@ -36,7 +38,10 @@ The programmer can therefore specify and at the same time implement stateful beh
 very concisely and often with a single statement of the DSL.
 <p>
 
+<p>
     <span class="subtitle"><a name="examples">Examples</a></span>
+</p>
+
 <p>
     The DSL is defined as a RequireJS module which, like JQuery, has a single export that is a function and entry point into the DSL.
     The examples are wrapped around a RequireJS import:
@@ -83,9 +88,9 @@ These divs have 3 behaviours applied to them (try it!):
 
 
 </p>
-    <a name="example1">
-        <span class="subtitle">Moving the box by dragging the mouse.</span>
-    </a>
+<p>
+        <span class="subtitle"><a name="example1">Moving the box by dragging the mouse.</a></span>
+</p>
 <p>
 The following statement begins by detecting a mouse-down event on the target.
 
@@ -116,7 +121,9 @@ leaves the container. The last method call in the chain, __(), terminates the st
 This example can also be applied to touch events with HTML 5.
 </p>
 
-<span class="subtitle">    <a name="example2">Hover intent</a></span>
+<p>
+    <span class="subtitle">    <a name="example2">Hover intent</a></span>
+</p>
 <p>
 Detection of hover intent by the mouse was the recommended approach for accessing mega menus and is still used on many websites today.
 A timer is used to prevent changing the state of the user interface too soon after a hover is detected - 500 milliseconds is used in this example to toggle a CSS class, hoverClass, on the target.
@@ -157,8 +164,9 @@ later on in both substatements with the declaration of the event _.timeout(). Th
 and reschedules a new timer, so that only 1 timer is active at any moment.
 
 </p>
-
-<span class="subtitle"><a name="example3">Rotating the box with mouse and key events.</a></span>
+<p>
+    <span class="subtitle"><a name="example3">Rotating the box with mouse and key events.</a></span>
+</p>
 <p>
 
 This example rotates the target with mouse movement while holding down the shift key. There are 2 dual cases. One of them starts by hovering the target. The other starts by holding down the shift key.
@@ -228,8 +236,9 @@ The main requireJS file for this page simply loads the 3 examples from above as 
 </span>
 </p>
 
-
+<p>
 <span class="subtitle"><a name="autocomplete">Autocompletion.</a></span>
+</p>
 <p>
 
     This final example uses a widget that suggests a list of countries in a drop down menu while the user types in to an input text field:
@@ -263,10 +272,11 @@ The key-down event on the input field is filtered for specific key values, i.e. 
 
 
 
-
-<span class="subtitle"><a name="sourcecode">Sourcecode.</a></span>
 <p>
-The library is implemented in TypeScript and the source is available in my <a class="reference" href="https://github.com/nicnguyen/ayttm"> github repository</a>.
+<span class="subtitle"><a name="sourcecode">Sourcecode.</a></span>
+</p>
+<p>
+The library is implemented in TypeScript and the source is available in <a class="reference" href="https://github.com/nicnguyen/ayttm"> github</a>.
 </p>
 
 

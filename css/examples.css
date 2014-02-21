@@ -39,27 +39,10 @@ select {
     position:absolute;
 }
 
-a {
-    display : block;
-}
 
 #autocompletion {
     margin:20px;
 }
-
-body {
-    font-family: verdana,helvetica,arial,sans-serif;
-
-}
-
-ul {
-    padding:10px;
-    margin-left:50px;
-}
-
-ul li {
-    padding-top:5px;
- }
 
 .title {
     font-size:120%;
