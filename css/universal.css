@@ -156,9 +156,9 @@
         font-size:30%;
         font:200% 'LeagueGothicRegular', sans-serif;
         position:relative;
-        left:210px;
-        top:68px;
-        width: 161px;
+        left: 199px;
+        top: 36px;
+        width: 400px;
       }
 
 
@@ -271,7 +271,7 @@
 
       #comments {position:relative;top:50px;clear:both;}
 
-      .current-page {cursor:default;background-color:gray;
+      .current-page-link {cursor:default;background-color:gray;
             background:-webkit-gradient(linear,left top, left bottom,from(gray),to(black));
             background:-moz-linear-gradient(top,gray,black);
             background:-o-linear-gradient(top,gray,black);
@@ -284,9 +284,9 @@
       p:first-child:first-letter {font-size:170%;}
       p + p:first-letter {font-size:120%;}
 
-      .code {white-space:pre;font-family:"Courier New", monospace;font-size:85%;text-align:left;display:block;margin-left:auto;margin-right:auto;font-weight:800;}
+      .code {white-space:pre;font-family:"Courier New", monospace;font-size:12px;text-align:left;display:block;margin-left:auto;margin-right:auto;font-weight:600;display:table;}
       .code-inline {font-family:"Courier New", monospace;font-weight:800;}
-
+      .subtitle {font-size:140%;}
       .figure {display:block;margin-right:auto;margin-left:auto;}
 
 
@@ -310,4 +310,16 @@
       }
       ul.sociallist li {
         margin-top:5px;
+      }
+
+      .reference {
+        display:inline;
+      }
+
+      ul.contents a {
+        text-decoration:none;
+      }
+
+      ul.contents li {
+        list-style-type:square;
       }

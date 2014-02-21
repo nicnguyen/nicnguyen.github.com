@@ -1,9 +1,9 @@
 
 
 $(document).ready(function() {
-    $("li a")
+    $("ul#menu li a")
         .filter(function (index){return this.href == window.location.href; })
-        .click(function(){return false;}).addClass("current-page");
+        .click(function(){return false;}).addClass("current-page-link");
 
     $("#banner a")
         .filter(function (index){return this.href == window.location.href || window.location.href == "http://nicnguyen.github.io/"; })
