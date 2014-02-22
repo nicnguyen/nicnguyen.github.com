@@ -29,7 +29,7 @@ define(['example3'], function(){
                ,
                 _('#target').mousemove().
                 andNext().
-                _([_('#target').mousemove(), _().not(_('#target').mouseleave())]).
+                    not(_('#target').mouseleave()).
                     until().
                     _('body').shiftkeydown().
                     andNext().

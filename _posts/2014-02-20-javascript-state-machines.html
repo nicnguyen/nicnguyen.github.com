@@ -203,16 +203,16 @@ define(['example3'], function(){
                     until().
                         _('body').shiftkeyup()
                ,
-                _('#target').mousemove().
+                 _('#target').mousemove().
                 andNext().
-                _([_('#target').mousemove(), _().not(_('#target').mouseleave())]).
+                    not(_('#target').mouseleave()).
                     until().
-                    _('body').shiftkeydown().
-                    andNext().
-                    _([_('#container').mousemove().with(rotate),
-                       _('#target').mousemove(),_('#target').mouseleave()]).
-                    until().
-                        _('body').shiftkeyup()
+                        _('body').shiftkeydown().
+                        andNext().
+                            _([_('#container').mousemove().with(rotate),
+                               _('#target').mousemove(),_('#target').mouseleave()]).
+                            until().
+                                _('body').shiftkeyup()
 
             ]).
             __();
