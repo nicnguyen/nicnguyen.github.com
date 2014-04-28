@@ -1,0 +1,73 @@
+    @font-face {
+        font-family: 'Axis';
+        src: url('KomikaTitle-Axis.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    body {margin:0;}
+    html {font:100% 'Axis'}
+    .tail {background:#555;height:550px;width:100%; font:200% ;color:white; text-align:center}
+    .social {position:fixed; left:0; top :100px;}
+    .social img {height:50px;width:50px;clear:both;display:block;padding-top:5px}
+    .content{margin:auto;width:80%;height:100%;min-height:1300px;}
+    .itunes {display:block;clear:both}
+
+    .bees, .bouncybearcontainer {
+        position:absolute;
+        left:0px;
+        display:block;
+        clear:both;
+    }
+
+    .bee1, .bee2 {
+        width:91px; height:91px;
+        background-repeat:no-repeat;
+        opacity:0;
+        filter:alpha(opacity=0)
+    }
+    .bee1 {
+        background-image:url('bee1.png');
+    }
+    .bee2 {
+        background-image:url('bee2.png');
+    }
+
+    .sprite {
+        clear:both;
+        display:block;
+        height:300px;
+    }
+
+    .bouncybear {
+        width:188px;
+        height:188px;
+        background-image:url('bouncybear-somersault.png');
+        background-repeat:no-repeat;
+        position:relative;
+        opacity:0;
+        filter:alpha(opacity=0)
+    }
+
+
+    .sound {
+        height:300px;
+        text-align:center;
+        font-size:300%;
+        opacity:0;
+        filter:alpha(opacity=0);
+        padding-top:91px;
+    }
+
+    .itunes {
+        text-align:center;
+        padding:20px;
+    }
+
+    .boing {
+        transform:rotate(-25deg);
+        -webkit-transform:rotate(-25deg);
+    }
+
+    .content p {
+        text-align:center;
+    }
