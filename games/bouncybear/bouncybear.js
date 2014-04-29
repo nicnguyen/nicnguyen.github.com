@@ -113,7 +113,7 @@ $(document).ready(function($) {
 
             var left = Math.max(0, Math.round(e.progress * (window.innerWidth-250)));
             var y = -0.6* (e.progress * 11.28 - 5.6)* (e.progress * 11.28 - 5.6)+20.2;
-            var top = y / 20.2 * 400;
+            var top = y / 20.2 * 200;
             top = -top;
             $('#bouncybear').css('left', left.toString() + 'px');
             $('#bouncybear').css('top',top.toString() + 'px');
@@ -123,23 +123,4 @@ $(document).ready(function($) {
         })
      //   .addIndicators()
         ;
-        // make sure we only do this on mobile:
-        if (Modernizr.touch) {
-            // using iScroll but deactivating -webkit-transform because pin wouldn't work because of a webkit bug: https://code.google.com/p/chromium/issues/detail?id=20574
-            // if you dont use pinning, keep "useTransform" set to true, as it is far better in terms of performance.
-            var myScroll = new IScroll('#wrapper', {scrollX: false, scrollY: true, scrollbars: true, useTransform: false, useTransition: false, probeType: 3});
-
-            // overwrite scroll position calculation to use child's offset instead of container's scrollTop();
-            controller.scrollPos(function () {
-                return -myScroll.y;
-            });
-
-            // thanks to iScroll 5 we now have a real onScroll event (with some performance drawbacks)
-            myScroll.on("scroll", function () {
-                controller.update();
-            });
-
-            // add indicators to scrollcontent so they will be moved with it.
-           // scene.addIndicators({parent: ".scrollContent"});
-        }
 });
