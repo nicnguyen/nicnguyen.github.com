@@ -84,3 +84,11 @@
         margin:10%;
         font-size:300%;
     }
+
+    a {
+        text-decoration:none;
+    }
+
+    a:visited {
+        color:black
+    }
