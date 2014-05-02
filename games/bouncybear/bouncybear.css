@@ -9,7 +9,7 @@
     .tail {background:#555;height:550px;width:100%; font:200% ;color:white; text-align:center}
     .social {position:fixed; left:0; top :100px;}
     .social img {height:50px;width:50px;clear:both;display:block;padding-top:5px}
-    .content{margin:auto;width:80%;height:100%;min-height:1300px;}
+    .content{margin:auto;width:80%;height:100%;min-height:1300px;padding:0 0 300px 0}
     .itunes {display:block;clear:both}
 
     .bees, .bouncybearcontainer {
@@ -70,4 +70,17 @@
 
     .content p {
         text-align:center;
+    }
+
+    .antiqueframe {
+        width:501px;
+    }
+
+    .center {
+        text-align:center;
+    }
+
+    .title {
+        margin:10%;
+        font-size:300%;
     }
