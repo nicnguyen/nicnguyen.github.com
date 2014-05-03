@@ -335,3 +335,7 @@
       ul.examples li {
          list-style-type:none;
       }
+
+      #social {
+        text-align:center;
+      }
