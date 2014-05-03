@@ -19,13 +19,20 @@
         font-style: normal;
     }
 
+    @font-face {
+        font-family: 'Conspiracy2';
+        src: url('../fonts/conspiracy.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
     h1 {
       font-size:500%;
       font:5em/1 'LeagueGothicRegular', sans-serif;
     }
 
     #warning {
-        font: 200% 'Conspiracy';
+        font: 200% 'Conspiracy2';
         color:black;
         text-align:center;
         padding:7px 0 10px 0;
