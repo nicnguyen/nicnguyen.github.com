@@ -12,10 +12,9 @@
         font-style: normal;
     }
 
-
     @font-face {
         font-family: 'Conspiracy';
-        src: url('../fonts/ConspPreRel') format('truetype');
+        src: url('../fonts/ConspReg') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
