@@ -13,6 +13,12 @@
     }
 
 
+    @font-face {
+        font-family: 'Conspiracy';
+        src: url('../fonts/ConspPreRel') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
 
     h1 {
       font-size:500%;
@@ -20,15 +26,10 @@
     }
 
     #warning {
-        font: 500% 'Psycho';
-        color:white;
+        font: 200% 'Conspiracy';
+        color:black;
         text-align:center;
-        padding:0px 0 10px 0;
-        -ms-transform:scaleX(1.3);
-        -moz-transform:scaleX(1.3);
-        -o-transform:scaleX(1.3);
-        transform:scaleX(1.3);
-        -webkit-transform: scaleX(1.3);
+        padding:7px 0 10px 0;
     }
 
     #posts {
@@ -257,14 +258,10 @@
 
       #content {position:relative;top:40px;}
 
-      #block {width:800px;margin:auto;opacity:0.6;filter:alpha(opacity=60)}
+      #block {width:100%;margin:auto;background:#876;height:80px;padding-top:20px;}
       #socialize {position:absolute;margin:5px;right:50px;}
 
-      #block {height:140px;background-color:black;
-        border-top-right-radius:15px;
-        border-top-left-radius:15px;
-      }
-      #footnote {color:white;font-size:67%;text-align:center;}
+      #footnote, #footnote  p {color:black;text-align:center;font: 100% 'Conspiracy';}
 
       .post-title {font-size:90%;padding-top:5px;}
       .post-date {font-size:80%;font-style:italic;margin-left:10px;padding-bottom:5px;}
