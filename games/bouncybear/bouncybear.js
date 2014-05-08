@@ -2,7 +2,7 @@ $(document).ready(function($) {
 
     var video = document.querySelector('#trailer');
     video.oncanplay = function(){
-        this.currentTime= 0.5;
+       // this.currentTime= 0.5;
         this.volume = 0.5;
     };
 
