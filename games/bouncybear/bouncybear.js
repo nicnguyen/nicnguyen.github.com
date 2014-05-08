@@ -1,5 +1,13 @@
 $(document).ready(function($) {
 
+    var video = document.querySelector('#trailer');
+    video.oncanplay = function(){
+        this.currentTime= 0.5;
+        this.volume = 0.5;
+    };
+
+    video.style.width = '500px';
+    video.style.height = '400px';
 
     var setXScale = function(e, xScale) {
         $(e).css('transform', 'scaleX('+xScale.toString()+')');
