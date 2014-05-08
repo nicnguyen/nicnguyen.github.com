@@ -265,7 +265,7 @@
 
       #content {position:relative;top:40px;}
 
-      #block {width:100%;margin:auto;background:#876;height:85px;padding-top:20px;}
+      #block {width:100%;margin:auto;background:#876;height:85px;padding-top:20px;border-top:5px solid black;}
       #socialize {position:absolute;margin:5px;right:50px;}
 
       #footnote, #footnote  p {color:black;text-align:center;font: 100% Conspiracy, 'Courier New';}
