@@ -142,16 +142,16 @@
         border-bottom: 10px black solid;
         border-left: 4px black solid;
         border-right: 4px black solid;
-        -ms-transform:scaleY(1.35) skewY(-9deg);
-        -moz-transform:scaleY(1.35) skewY(-9deg);
-        -o-transform:scaleY(1.35) skewY(-9deg);
-        transform:scaleY(1.35) skewY(-9deg);
-        -webkit-transform:scaleY(1.35) skewY(-9deg);
+        -ms-transform:scaleY(1.35) skewY(-14deg);
+        -moz-transform:scaleY(1.35) skewY(-14deg);
+        -o-transform:scaleY(1.35) skewY(-14deg);
+        transform:scaleY(1.35) skewY(-14deg);
+        -webkit-transform:scaleY(1.35) skewY(-14deg);
         position:relative;
         left:30px;top:74px;
         font-size:30px;
         font-weight:900;
-        width:301px;
+        width:233px;
       }
 
       #banner a {font-size:100%;font:2em/1 'LeagueGothicRegular', sans-serif;text-decoration:none; color:black;}
@@ -166,7 +166,7 @@
         font-size:30%;
         font:200% 'LeagueGothicRegular', sans-serif;
         position:relative;
-        left: 199px;
+        left: 154px;
         top: 36px;
         width: 400px;
       }
