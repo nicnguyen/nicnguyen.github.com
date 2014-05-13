@@ -148,10 +148,10 @@
         transform:scaleY(1.35) skewY(-14deg);
         -webkit-transform:scaleY(1.35) skewY(-14deg);
         position:relative;
-        left:30px;top:74px;
-        font-size:30px;
+        left:48px;top:74px;
+        font-size:36px;
         font-weight:900;
-        width:233px;
+        width:279px;
       }
 
       #banner a {font-size:100%;font:2em/1 'LeagueGothicRegular', sans-serif;text-decoration:none; color:black;}
@@ -166,7 +166,7 @@
         font-size:30%;
         font:200% 'LeagueGothicRegular', sans-serif;
         position:relative;
-        left: 154px;
+        left: 180px;
         top: 36px;
         width: 400px;
       }
