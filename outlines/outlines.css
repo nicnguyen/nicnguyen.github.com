@@ -1,0 +1,24 @@
+.section-title {
+    font-size:130%;
+    font-weight:bold;
+}
+
+.definition {
+    font-size:110%;
+    font-style:italic;
+    padding:5px 0 5px 0;
+}
+
+.section {
+    padding-left:50px;
+}
+
+.section-body {
+    padding:15px ;
+}
+
+.outlines-title {
+    font-size:200%;
+    margin:auto;
+    width:10%;
+}
