@@ -339,3 +339,11 @@
       #social {
         text-align:center;
       }
+
+      .rule-top {
+        border-bottom: 1px solid;
+      }
+
+      .rule-bottom {
+        border-top: 1px solid;
+      }

@@ -1,0 +1,131 @@
+---
+layout: post
+title: Remembering when to use covariant and contravariant types.
+disqus_id: variance
+description: Remembering when to use covariant and contravariant types.
+---
+
+<p>
+
+    Covariant and contravariant types creep up in the subtyping rules for functions, IO channels (such as in the Pi-calculus) and
+    with generic collection such as lists.
+</p>
+
+<p>
+    The general rule is approximately that writes are contravariant and reads are covariant.
+</p>
+<p>
+    Let's write <span class="code-inline">A &lt;: A'</span> to means that <span class="code-inline">A</span> is a subtype of <span class="code-inline">A'</span>.
+    Generally, a type <span class="code-inline">T</span> is covariant within its constructor <span class="code-inline">C</span> when <span class="code-inline">T &lt;: T'</span> and <span class="code-inline">C &lt;: C'</span>
+    implies <span class="code-inline">C[T] &lt;: C'[T']</span>.
+    That is, the direction between <span class="code-inline">T</span> and <span class="code-inline">T'</span> is preserved.
+    The type is contravariant when <span class="code-inline">T &lt; T'</span> and <span class="code-inline">C &lt;: C'</span> implies <span class="code-inline">C[T'] &lt;: C[T]</span>.
+    That is, the direction between <span class="code-inline">T</span> and <span class="code-inline">T'</span> has been flipped around in the other direction.
+</p>
+<p>
+    When thinking about types, I find it useful to remember the subsumption rule.
+    If we have that <span class="code-inline">x</span> has type
+    <span class="code-inline">A</span> (<span class="code-inline">x:A</span>), we also have that <span class="code-inline">x</span> has type <span class="code-inline">A'</span> (<span class="code-inline">x:A'</span>).
+    The subtype relation <span class="code-inline">&lt;:</span> is reflexive (<span class="code-inline">A &lt;: A</span>) and transitive (<span class="code-inline">A &lt;: B</span> and <span class="code-inline">B &lt;:C</span> implies <span class="code-inline">A &lt;: C</span>).
+    This subsumption rule is formally written:
+</p>
+<p class="code">
+    x: A    A &lt;: A'
+    <span class="rule-bottom">x: A'</span>
+</p>
+
+<span class="subtitle">Function types.</span>
+
+</p>
+<p>
+    In terms of functions, parameter types are contravariant and return types are covariant.
+    The subtyping rule for a function type is:
+</p>
+<p class="code">
+     A' &lt;: A  B &lt;: B'
+    <span class="rule-bottom">A -&gt; B &lt;: A' -&gt; B'</span>
+</p>
+<p>
+    Using the subsumption rule we have that if <span class="code-inline">f: A -&gt; B</span> and <span class="code-inline">A &lt;: A'</span> and <span class="code-inline">B' &lt;: B</span>
+    then <span class="code-inline">f: A' -&gt; B'</span>
+</p>
+<p>
+    Intuitively, this rule ensures that it is safe to pass to <span class="code-inline">f</span> more information in its argument
+    and to take less information from its return value. The converse to this rule would be unsafe.
+</p>
+<p>
+    Java 1.5 introduced covariant return types for method classes, which can be understood in terms of function subtyping.
+</p>
+<p>
+    When a Java class <span class="code-inline">C</span> has a method <span class="code-inline">m: A -&gt; B</span> then a class <span class="code-inline">C'</span> with
+    <span class="code-inline">C' &lt;: C</span> can override <span class="code-inline">m</span> with <span class="code-inline">m: A -&gt; B'</span> where <span class="code-inline">B' < B</span>.
+    By the subtyping rule for functions, we have that <span class="code-inline">A -&gt; B' &lt;: A -&gt; B</span>. Thus when <span class="code-inline">o: C</span>
+    and <span class="code-inline">o':C'</span> then the assignment <span class="code-inline">o = o'</span> is safe
+    as the invocation <span class="code-inline">o.m(a)</span> will return a value that is a subtype of <span class="code-inline">B</span>.
+</p>
+
+<span class="subtitle">    Communication channels in the Pi-calculus.   </span>
+</p>
+<p>
+    Communication channels in the pi-calculus are typed with input and output capabilities.
+    The chanel types are <span class="code-inline">output T</span>, <span class="code-inline">input T</span> and <span class="code-inline">#T</span>.
+    The ouput type is contravariant, the
+    input channel is covariant and the input/output chanel, <span class="code-inline">#T</span>, is invariant.
+</p>
+<p>
+    Intuitively, this means that if a channel is contractually agreed to send values of type <span class="code-inline">T</span> then
+    it is type-safe for a sender to output more information on the channel (to send values of type <span class="code-inline">T'</span> contravariantly such that <span class="code-inline">T' &lt;: T</span>).
+    If a chanel is contractually agreed to receive values of type <span class="code-inline">T</span> then it is type-safe for a receiver to input
+    less information from the channel (to read values of type <span class="code-inline">T'</span> covariantly such that <span class="code-inline">T &lt;: T'</span>).
+</p>
+<p>
+    The subtyping rules for input and ouput channels show that the output chanel is contravariant, with the direction between <span class="code-inline">T</span> and <span class="code-inline">T'</span>
+    flipped around in the opposite direction:
+</p>
+<p class="code">
+          T &lt;: T'
+    <span class="rule-bottom">input T &lt;: input T'</span>
+</p>
+<p class="code">
+          T' &lt;: T
+    <span class="rule-bottom">output T &lt;: output T'</span>
+</p>
+<p>
+<span class="subtitle">    Generics. </span>
+</p>
+<p>
+    The put-get principle for generic collections states that it is safe to use a generic collection of values of type <span class="code-inline">T</span>
+    contravariantly for putting/writing/storing and covariantly for getting/reading/retrieving.
+</p>
+<p>
+    Java's syntax for covariant generic types is <span class="code-inline">C&lt;? extends T&gt;</span> and its syntax for contravariant generic types is <span class="code-inline">C&lt;? super T&gt;</span>.
+</p>
+<p>
+    We could try to make sense of generics by writing the subtyping rules for Java's generic wildcard types like this:
+</p>
+<p class="code">
+            T &lt;: T'
+    <span class="rule-bottom">C&lt;T&gt; &lt;: C&lt;? extends T'&gt;</span>
+</p>
+<p class="code">
+          T' &lt;: T
+    <span class="rule-bottom">C&lt;T&gt; &lt;: C&lt;? super T'&gt;</span>
+</p>
+<p>
+    while remembering the subsumption rule, we have that a collection of type <span class="code-inline">C&lt;T&gt;</span> can be typed either contravariantly for writes or
+    covariantly for reads.
+</p>
+<p>
+    Java's type system seems to enforce type-safety by using two extra rules, one for parameters and one for
+    return values. That is, when a type variable <span class="code-inline">E</span> is instantiated with <span class="code-inline">? extends T</span> and <span class="code-inline">E e</span>
+    is a parameter of a method then every value
+    is untypeable as an argument(kind of like a bottom type, perhaps). When a type variable <span class="code-inline">E</span> is instantiated with <span class="code-inline">? super T</span> and
+    <span class="code-inline">E</span> is a return
+    value of a method then every value returned is typed to Object, which is the root of the class hierarchy (like a top type).
+</p>
+<p>
+    Thus, generic covariant types are useful as return values of methods and generic contravariant types are useful as parameters to methods.
+</p>
+
+
+</p>
