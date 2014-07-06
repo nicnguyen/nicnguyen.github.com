@@ -58,7 +58,7 @@ description: Remembering when to use covariant and contravariant types.
 </p>
 <p>
     When a Java class <span class="code-inline">C</span> has a method <span class="code-inline">m: A -&gt; B</span> then a class <span class="code-inline">C'</span> with
-    <span class="code-inline">C' &lt;: C</span> can override <span class="code-inline">m</span> with <span class="code-inline">m: A -&gt; B'</span> where <span class="code-inline">B' < B</span>.
+    <span class="code-inline">C' &lt;: C</span> can override <span class="code-inline">m</span> with <span class="code-inline">m: A -&gt; B'</span> where <span class="code-inline">B' &lt;: B</span>.
     By the subtyping rule for functions, we have that <span class="code-inline">A -&gt; B' &lt;: A -&gt; B</span>. Thus when <span class="code-inline">o: C</span>
     and <span class="code-inline">o':C'</span> then the assignment <span class="code-inline">o = o'</span> is safe
     as the invocation <span class="code-inline">o.m(a)</span> will return a value that is a subtype of <span class="code-inline">B</span>.
