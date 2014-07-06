@@ -50,8 +50,8 @@ description: Remembering when to use covariant and contravariant types.
     then <span class="code-inline">f: A' -&gt; B'</span>
 </p>
 <p>
-    Intuitively, this rule ensures that it is safe to pass to <span class="code-inline">f</span> more information in its argument
-    and to take less information from its return value. The converse to this rule would be unsafe.
+    Intuitively, this rule ensures that it is safe to pass to <span class="code-inline">f</span> more information (a wider type) in its argument
+    and to take less information (a narrower type) from its return value. The converse to this rule would be unsafe.
 </p>
 <p>
     Java 1.5 introduced covariant return types for class methods, which can be understood in terms of function subtyping.
