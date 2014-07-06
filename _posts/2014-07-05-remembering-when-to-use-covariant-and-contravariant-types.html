@@ -29,7 +29,7 @@ description: Remembering when to use covariant and contravariant types.
     The subtype relation <span class="code-inline">&lt;:</span> is reflexive (<span class="code-inline">A &lt;: A</span>) and transitive (<span class="code-inline">A &lt;: B</span> and <span class="code-inline">B &lt;:C</span> implies <span class="code-inline">A &lt;: C</span>).
     This subsumption rule is formally written:
 </p>
-<p class="code">
+<p class="type-rule">
     x: A    A &lt;: A'
     <span class="rule-bottom">x: A'</span>
 </p>
@@ -41,7 +41,7 @@ description: Remembering when to use covariant and contravariant types.
     In terms of functions, parameter types are contravariant and return types are covariant.
     The subtyping rule for a function type is:
 </p>
-<p class="code">
+<p class="type-rule">
      A' &lt;: A  B &lt;: B'
     <span class="rule-bottom">A -&gt; B &lt;: A' -&gt; B'</span>
 </p>
@@ -82,11 +82,11 @@ description: Remembering when to use covariant and contravariant types.
     The subtyping rules for input and ouput channels show that the output chanel is contravariant, with the direction between <span class="code-inline">T</span> and <span class="code-inline">T'</span>
     flipped around in the opposite direction:
 </p>
-<p class="code">
+<p class="type-rule">
           T &lt;: T'
     <span class="rule-bottom">input T &lt;: input T'</span>
 </p>
-<p class="code">
+<p class="type-rule">
           T' &lt;: T
     <span class="rule-bottom">output T &lt;: output T'</span>
 </p>
@@ -103,11 +103,11 @@ description: Remembering when to use covariant and contravariant types.
 <p>
     We could try to make sense of generics by writing the subtyping rules for Java's generic wildcard types like this:
 </p>
-<p class="code">
+<p class="type-rule">
             T &lt;: T'
     <span class="rule-bottom">C&lt;T&gt; &lt;: C&lt;? extends T'&gt;</span>
 </p>
-<p class="code">
+<p class="type-rule">
           T' &lt;: T
     <span class="rule-bottom">C&lt;T&gt; &lt;: C&lt;? super T'&gt;</span>
 </p>
