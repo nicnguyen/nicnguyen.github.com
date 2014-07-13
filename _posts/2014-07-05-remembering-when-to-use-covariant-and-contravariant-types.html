@@ -7,7 +7,7 @@ description: Remembering when to use covariant and contravariant types.
 
 <p>
 
-    Covariant and contravariant types creep up in the subtyping rules for functions, IO channels (such as in the Pi-calculus) and
+    Covariant and contravariant types creep up in the subtyping rules for functions, I/O channels (such as in the Pi-calculus) and
     with generic collections such as lists.
 </p>
 
@@ -16,6 +16,7 @@ description: Remembering when to use covariant and contravariant types.
 </p>
 <p>
     Let's write <span class="code-inline">A &lt;: A'</span> to means that <span class="code-inline">A</span> is a subtype of <span class="code-inline">A'</span>.
+    In class-based object oriented languages, the subtype relation is induced by the class hierarchy.
     Generally, a type <span class="code-inline">T</span> is covariant within its constructor <span class="code-inline">C</span> when <span class="code-inline">T &lt;: T'</span> and <span class="code-inline">C &lt;: C'</span>
     implies <span class="code-inline">C[T] &lt;: C'[T']</span>.
     That is, the direction between <span class="code-inline">T</span> and <span class="code-inline">T'</span> is preserved.
@@ -24,7 +25,7 @@ description: Remembering when to use covariant and contravariant types.
 </p>
 <p>
     When thinking about types, I find it useful to remember the subsumption rule.
-    If we have that <span class="code-inline">x</span> has type
+    If we have that <span class="code-inline">A'</span> is a subtype of <span class="code-inline">A</span> and <span class="code-inline">x</span> has type
     <span class="code-inline">A</span> (<span class="code-inline">x:A</span>), we also have that <span class="code-inline">x</span> has type <span class="code-inline">A'</span> (<span class="code-inline">x:A'</span>).
     The subtype relation <span class="code-inline">&lt;:</span> is reflexive (<span class="code-inline">A &lt;: A</span>) and transitive (<span class="code-inline">A &lt;: B</span> and <span class="code-inline">B &lt;:C</span> implies <span class="code-inline">A &lt;: C</span>).
     This subsumption rule is formally written:
