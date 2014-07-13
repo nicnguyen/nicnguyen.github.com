@@ -25,7 +25,7 @@ description: Remembering when to use covariant and contravariant types.
 </p>
 <p>
     When thinking about types, I find it useful to remember the subsumption rule.
-    If we have that <span class="code-inline">A'</span> is a subtype of <span class="code-inline">A</span> and <span class="code-inline">x</span> has type
+    If we have that <span class="code-inline">A &lt;: A'</span> and <span class="code-inline">x</span> has type
     <span class="code-inline">A</span> (<span class="code-inline">x:A</span>), we also have that <span class="code-inline">x</span> has type <span class="code-inline">A'</span> (<span class="code-inline">x:A'</span>).
     The subtype relation <span class="code-inline">&lt;:</span> is reflexive (<span class="code-inline">A &lt;: A</span>) and transitive (<span class="code-inline">A &lt;: B</span> and <span class="code-inline">B &lt;:C</span> implies <span class="code-inline">A &lt;: C</span>).
     This subsumption rule is formally written:
