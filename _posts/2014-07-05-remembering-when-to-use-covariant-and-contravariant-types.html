@@ -20,7 +20,7 @@ description: Remembering when to use covariant and contravariant types.
     Generally, a type <span class="code-inline">T</span> is covariant within its constructor <span class="code-inline">C</span> when <span class="code-inline">T &lt;: T'</span>
     implies <span class="code-inline">C[T] &lt;: C[T']</span>.
     That is, the direction between <span class="code-inline">T</span> and <span class="code-inline">T'</span> is preserved.
-    The type is contravariant when <span class="code-inline">T &lt; T'</span> implies <span class="code-inline">C[T'] &lt;: C[T]</span>.
+    The type is contravariant when <span class="code-inline">T &lt;: T'</span> implies <span class="code-inline">C[T'] &lt;: C[T]</span>.
     That is, the direction between <span class="code-inline">T</span> and <span class="code-inline">T'</span> has been flipped around in the other direction.
 </p>
 <p>
