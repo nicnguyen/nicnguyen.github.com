@@ -116,6 +116,19 @@ description: Remembering when to use covariant and contravariant types.
     while remembering the subsumption rule, we have that a collection of type <span class="code-inline">C&lt;T&gt;</span> can be typed either contravariantly for writes or
     covariantly for reads.
 </p>
+
+The subtype relation is naturally extended between wildcards:
+
+<p class="type-rule">
+    T &lt;: T'
+    <span class="rule-bottom">C&lt;? extends T&gt; &lt;: C&lt;? extends T'&gt;</span>
+</p>
+<p class="type-rule">
+    T &lt;: T'
+    <span class="rule-bottom">C&lt;? super T'&gt; &lt;: C&lt;? super T&gt;</span>
+</p>
+
+
 <p>
     Java's type system seems to enforce type-safety by using two extra rules, one for parameters and one for
     return values. That is, when a type variable <span class="code-inline">E</span> is instantiated with <span class="code-inline">? extends T</span> and <span class="code-inline">E e</span>
