@@ -77,19 +77,19 @@ A class C can define a companion object with the same name C, which is a singlet
 
 <span class="subtitle"> Type members.  </span>
 <p>
-Type members are an alternative to type parameters. Dependent path types access type members.
+Type members are an alternative to type parameters. Dependent-path types access type members.
 </p>
 
 <span class="subtitle"> Dependent-path types.</span>
 <p>
-    Dependent path types. If B is a type member of A and a: B then a.B is dependent on its enclosing instance a. Each dependent path type is a singleton type.
-    Each reference o has a conceptual type, that is a singleton type, o.type, through which a dependent path type is accessed. i.e. a.B is really a.type.B.
+    If B is a type member of A and a: B then a.B is dependent on its enclosing instance a. Each dependent-path type is a singleton type.
+    Each reference o has a conceptual type, that is a singleton type, o.type, through which a dependent-path type is accessed. i.e. a.B is really a.type.B.
     Useful for implementing e.g. families of objects or fine-grained access control. See <a href="#Families">2</a> and <a href="#PathTypes">3</a>.
 </p>
 
 <span class="subtitle"> Type projection</span>
 <p>
-    A type projection A#B is like the opposite of a dependent path type selection a.B. i.e. an instance of B belonging to any instance of A and not necessarily this A.
+    A type projection A#B is like the opposite of a dependent-path type selection a.B. i.e. an instance of B belonging to any instance of A and not necessarily this A.
 </p>
 
 <span id="TC" class="subtitle"> Type classes.  </span>
