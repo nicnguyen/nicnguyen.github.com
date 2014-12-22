@@ -73,6 +73,26 @@ A class C can define a companion object with the same name C, which is a singlet
      An implicit parameter v:T that is not supplied by the caller, is automatically assigned to by Scala through searching the current implicit scope based on its type T.
      The implicit scope is simply the implicit definitions that are defined within the current scope through implicit declarations e.g. either imports or the current local scope.
 
+     <span class="code">
+            implicitly[T]
+        </span> is equivalent to calling ? where,
+
+        <span class="code">
+            def ?[T](implicit v : T) = v
+        </span>
+
+    That is, it retrieves the implicit value of type T from the current scope.
+
+    An implicit parameter can also be an implicit converter (by convention of its type, a function type):
+
+    <span class="code">
+        def getIndex[T, CC](seq: CC, value: T)(implicit conv: CC => Seq[T]) = seq.indexOf(value)
+    </span>
+
+    is equivalent to the 'view bound':
+    <span class="code">
+        def getIndex[T, CC <% Seq[T]](seq: CC, value: T) = seq.indexOf(value)
+    </span>
 </p>
 
 <span class="subtitle"> Type members.  </span>
@@ -100,27 +120,8 @@ Type members are an alternative to type parameters. Dependent-path types access 
 
      For convenience, Scala has a more general notion of type classes that are implemented with the supporting features of implicits and type members.
 
-        <span class="code">
-            implicitly[T]
-        </span> is equivalent to calling ? where,
-
-        <span class="code">
-            def ?[T](implicit v : T) = v
-        </span>
-
-     That is, it retrieves the implicit value of type T from the current scope.
-
-     An implicit parameter can also be an implicit converter (by convention of its type, a function type)
-
-    <span class="code">
-        def getIndex[T, CC](seq: CC, value: T)(implicit conv: CC => Seq[T]) = seq.indexOf(value)
-    </span>
-
-    is equivalent to the 'view bound':
-    <span class="code">
-        def getIndex[T, CC <% Seq[T]](seq: CC, value: T) = seq.indexOf(value)
-    </span>
-    Type classes, together with type members, allow expressive 'type-level computation'. For example, Scala's type system can check session types! See <a href="#TypeClasses">1</a>.
+     A simple example of a type class is a monoid with instances for addition and multiplication.
+     Type classes, together with type members, allow expressive 'type-level computation'. For example, Scala's type system can check session types! See <a href="#TypeClasses">1</a>.
 </p>
 
 <span class="subtitle"> Higher kinds.</span>
