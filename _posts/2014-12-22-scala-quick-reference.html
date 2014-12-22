@@ -71,7 +71,7 @@ A class C can define a companion object with the same name C, which is a singlet
      If A doesn't have m but c(a).m is well-typed then a.m will resolve to c(a).m.
 
      An implicit parameter v:T that is not supplied by the caller, is automatically assigned to by Scala through searching the current implicit scope based on its type T.
-     The implicit scope is simply the implicit definitions that are defined within the current scope through implicit declarations e.g. either imports or the current local scope.
+     The implicit scope is simply the implicit definitions that are defined within the current scope through implicit declarations e.g. either imports, the current local scope or companion objects.
 
      <span class="code">
             implicitly[T]
