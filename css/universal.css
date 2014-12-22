@@ -102,6 +102,7 @@
         font-size:13px;
         text-align:justify;
         font-weight:500;
+        margin-left:10px;
       }
 
       #bannerTop {
@@ -348,3 +349,9 @@
       .rule-bottom {
         border-top: 1px solid;
       }
+
+    .ref {
+        font-weight:50%;
+        padding-top:20px;
+        display:block;
+    }
