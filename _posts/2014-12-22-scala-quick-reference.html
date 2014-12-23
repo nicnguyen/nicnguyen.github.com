@@ -64,7 +64,7 @@ A class C can define a companion object with the same name C, which is a singlet
 
 <span class="subtitle"> Implicits. </span>
 <p>
-     Implicits allow retroactive extension of libraries without changing their source code. The so called 'Pimp my library' pattern. Implicits also supports OO type classes. See <a href="#TC">type classes</a>.
+     Implicits allow retroactive extension of libraries without changing their source code. The so called 'Pimp my library' pattern. Implicits also support OO type classes. See <a href="#TC">type classes</a>.
      The implicit modifier can apply to objects, vals and defs. When the type of an implicit is a function type A => B
      then it defines a converter for an implicit conversion.
      An implicit conversion c :  A => B converts a: A to c(a): B.
@@ -121,7 +121,7 @@ Type members are an alternative to type parameters. Dependent-path types access 
      For convenience, Scala has a more general notion of type classes that are implemented with the supporting features of implicits and type members.
 
      A simple example of a type class is a monoid with instances for addition and multiplication.
-     Type classes, together with type members, allow expressive 'type-level computation'. For example, Scala's type system can check session types! See <a href="#TypeClasses">1</a>.
+     Type classes, together with type members, allow expressive 'type-level computation'. For example, Scala's type system can check duality between session types! See <a href="#TypeClasses">1</a>.
 </p>
 
 <span class="subtitle"> Higher kinds.</span>
