@@ -95,6 +95,12 @@ A class C can define a companion object with the same name C, which is a singlet
     </span>
 </p>
 
+<span class="subtitle"> Context bound. </span>
+<p>
+    A type variable declared as [A:C] is the type of values a : A for which there exists a value c : C[A]. e.g. c contains a.
+    This is useful, for example, to unify a type across different objects. See sessions example in <a href="#TypeClasses">1</a>.
+</p>
+
 <span class="subtitle"> Type members.  </span>
 <p>
 Type members are an alternative to type parameters. Dependent-path types access type members.
