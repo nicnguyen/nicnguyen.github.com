@@ -124,10 +124,10 @@ Type members are an alternative to type parameters. Dependent-path types access 
      An instance of a type class provides the implementations of the function names, at specific types.
      When there are several instances then this is a form of overloading or 'adhoc polymorphism'.
 
-     For convenience, Scala has a more general notion of type classes that are implemented with the supporting features of implicits and type members.
+     Scala type classes are implemented using implicits and type members.
 
      A simple example of a type class is a monoid with instances for addition and multiplication.
-     Type classes, together with type members, allow expressive 'type-level computation'. For example, Scala's type system can check duality between session types! See <a href="#TypeClasses">1</a>.
+     Type classes allow 'type-level computation'. For example, Scala's type system can check duality between session types, in which the implicit witness is built on demand. See <a href="#TypeClasses">1</a>.
 </p>
 
 <span class="subtitle"> Higher kinds.</span>
