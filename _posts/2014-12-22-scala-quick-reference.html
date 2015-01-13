@@ -51,6 +51,33 @@ A class C can define a companion object with the same name C, which is a singlet
 
 </p>
 
+<span class="subtitle"> Call by name args. (Lazy args) </span>
+<p>
+    The syntax for lazily evaluated arguments is:
+
+    <span class ="code">
+        f (x : => T) ...
+    </span>
+</p>
+
+<span class="subtitle"> Right associative methods. </span>
+<p>
+    Normally a method is invoked with an argument on an object like this:
+
+    <span class ="code">
+        o.m(a)
+    </span>
+
+    In Scala, however, one can write <span class ="code-inline">o m a</span> but when <span class ="code-inline">m</span> is a symbolic name that ends with a colon, one can even write this:
+
+    <span class ="code">
+        a m o
+    </span>
+
+    See symbolic foldRight, Fibonacci example in Stream.class API docs.
+</p>
+
+
 <span class="subtitle"> Self types. </span>
 <p>
      A trait or class that has self types is necessarily abstract and must be composed with instances of its self types to be instantiated.
