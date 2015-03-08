@@ -3,6 +3,12 @@
     font-weight:bold;
 }
 
+.list-title {
+    font-size:110%;
+    font-weight:bold;
+    padding:10px 0px 5px 0px;
+}
+
 .definition {
     font-size:110%;
     font-style:italic;
