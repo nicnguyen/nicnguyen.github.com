@@ -41,9 +41,11 @@
 
     <xsl:template match="//list">
         <div class="section">
+            <xsl:if test="@title">
             <div class="list-title">
                 <xsl:value-of select="@title"/>
             </div>
+            </xsl:if>
             <ul>
                 <xsl:for-each select="item">
                     <li>
@@ -52,6 +54,11 @@
                     </li>
                 </xsl:for-each>
             </ul>
+            <xsl:if test="@comment">
+                <div>
+                    <xsl:value-of select="@comment"/>
+                </div>
+            </xsl:if>
         </div>
 
     </xsl:template>
