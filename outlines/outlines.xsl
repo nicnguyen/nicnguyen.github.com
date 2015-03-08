@@ -38,4 +38,22 @@
             </div>
         </div>
     </xsl:template>
+
+    <xsl:template match="//list">
+        <div class="section">
+            <div class="list-title">
+                <xsl:value-of select="@title"/>
+            </div>
+            <ul>
+                <xsl:for-each select="item">
+                    <li>
+                        <xsl:value-of select="@title"/>
+                        <xsl:apply-templates/>
+                    </li>
+                </xsl:for-each>
+            </ul>
+        </div>
+
+    </xsl:template>
+
 </xsl:stylesheet>
