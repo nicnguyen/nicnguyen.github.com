@@ -28,3 +28,8 @@
     margin:auto;
     width:10%;
 }
+
+p {
+    display:block;
+    padding: 3 0 3 0;
+}
