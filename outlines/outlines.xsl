@@ -62,5 +62,10 @@
         </div>
 
     </xsl:template>
+    <xsl:template match="div">
+        <div>
+                <xsl:apply-templates/>
+        </div>
+    </xsl:template>
 
 </xsl:stylesheet>
