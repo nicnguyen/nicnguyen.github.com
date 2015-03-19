@@ -35,5 +35,5 @@ p {
     margin: 0
 }
 
-p:first-child:first-letter {font-size:170%;}
-p + p:first-letter {font-size:170%;}
+p:first-child {font-size:130%;}
+p + p:first-child {font-size:130%;}
