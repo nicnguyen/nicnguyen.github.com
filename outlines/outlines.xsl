@@ -63,7 +63,7 @@
 
     </xsl:template>
     <xsl:template match="p">
-        - <p>
+        <p>
                 <xsl:apply-templates/>
         </p>
     </xsl:template>
