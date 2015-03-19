@@ -63,9 +63,9 @@
 
     </xsl:template>
     <xsl:template match="p">
-        <div>
+        <p>
                 <xsl:apply-templates/>
-        </div>
+        </p>
     </xsl:template>
 
 </xsl:stylesheet>
