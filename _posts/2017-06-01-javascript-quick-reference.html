@@ -65,14 +65,14 @@ Semi colons are optional. Gotchas to watch out for:
     </span>
     is like
     <span class ="code-inline">
-        x.valueOf().toString()
+        x.valueOf().toString().
     </span>
     <span class ="code-inline">toString</span> defaults to
     <span class ="code-inline">[object classname]</span> where classname is an internal property of the runtime but can be used
     to extract the class of an object i.e.
     <span class ="code-inline">
-        Object.prototype.toString.call(o)
-    </span>.
+        Object.prototype.toString.call(o).
+    </span>
 
     <span class ="code-inline">toJson</span>
      is used when serialising object to strings i.e.
@@ -81,7 +81,7 @@ Semi colons are optional. Gotchas to watch out for:
     </span>
     is like
     <span class ="code-inline">
-    JSON.stringify(v.toJson())
+    JSON.stringify(v.toJson()).
     </span>
 
     and defaults to identity.
