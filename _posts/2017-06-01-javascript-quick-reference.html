@@ -116,26 +116,25 @@ Semi colons are optional. Gotchas to watch out for:
 <span class="subtitle"> Types.</span>
 <p>
     The JS primitive types are:
-    <span class ="code">
+    <span class ="code-inline">
         number
-    </span>
+    </span>,
 
-    <span class ="code">
+    <span class ="code-inline">
         string
-    </span>
-    <span class ="code">
+    </span>,
+    <span class ="code-inline">
         boolean
-    </span>
+    </span>.
 
     All non-primitive object have type:
-    <span class ="code">
+    <span class ="code-inline">
     object
-    </span>
-
+    </span>.
     The type of undefined is
-    <span class ="code">
+    <span class ="code-inline">
     undefined
-    </span>
+    </span>.
 </p>
 
 
@@ -145,8 +144,8 @@ Semi colons are optional. Gotchas to watch out for:
     An array-like object has a non-enumerable length property and enumerable numeric keys >= 0 and <= Infinity.
     Such an object can be handled as an array but won't offer random access times expected from a real array.
 
-    Array methods <span class ="code">push</span>, <span class ="code">pop</span>, <span class ="code">shift</span>,
-    <span class="code">unshift</span> maintain the length property.
+    Array methods <span class ="code-inline">push</span>, <span class ="code-inline">pop</span>, <span class ="code-inline">shift</span>,
+    <span class="code-inline">unshift</span> maintain the length property.
 
     An array like object can be converted to an array using:
 
@@ -155,8 +154,7 @@ Semi colons are optional. Gotchas to watch out for:
     </span>
 
     A sparse array literal with commas is filled with undefined values:
-
-    <span class ="code">
+    <span class ="code-inline">
         [,,,]
     </span>
 </p>
@@ -166,7 +164,7 @@ Semi colons are optional. Gotchas to watch out for:
     JS has prototype based inheritence.
 
     An object's prototype can be accessed via the non-standard property:
-    <span class ="code">
+    <span class ="code-inline">
         __prototype__
     </span>
 
@@ -196,78 +194,78 @@ Semi colons are optional. Gotchas to watch out for:
 
 <span class="subtitle"> arguments </span>
 <p>
-    <span class ="code">arguments</span> is a keyword inside a function body that represents an array-like object for the function arguments.
+    <span class ="code-inline">arguments</span> is a keyword inside a function body that represents an array-like object for the function arguments.
 </p>
 
 <span class="subtitle"> Property access control in ES5. </span>
 <p>
     A property's descriptor has 3 boolean valued attributes for access control:
 
-    <span class ="code">
+    <span class ="code-inline">
         writable
     </span>
 
     i.e. is it not readonly. An Object with a get method and without a set method is readonly by default.
 
-    <span class ="code">
+    <span class ="code-inline">
         enumerable
     </span>
 
     i.e. is the property returned by
-    <span class ="code">
+    <span class ="code-inline">
         Object.keys
     </span>
     and iterable in a for loop.
 
-    <span class ="code">
+    <span class ="code-inline">
         configurable
     </span>
 
     i.e. can it be deleted.
 
-    <span class ="code">
+    <span class ="code-inline">
         Object.preventExtensions(o)
-    </span>
+    </span>.
 
     prevents new properties being added to <span class ="code">o</span>.
 
-    <span class ="code">
+    <span class ="code-inline">
         Object.seal()
-    </span>
+    </span>.
 
-    As <span class ="code">preventExtensions</span>, but also prevents property deletion and further configuration.
+    As <span class ="code-inline">preventExtensions</span>, but also prevents property deletion and further configuration.
     Properties are still writable.
 
-    <span class ="code">
+    <span class ="code-inline">
         Object.freeze(o)
     </span>
 
-    As <span class ="code">seal</span>, but also makes all properties read only.
+    As <span class ="code-inline">seal</span>, but also makes all properties read only.
 </p>
 
 <span class="subtitle"> Property membership testing. </span>
 <p>
-    <span class ="code">
+    <span class ="code-inline">
         'propertyName' in o
     </span>
 
-    i.e. does <span class ="code">o</span> have an own or inhertited property <span class ="code">'propertyName'</span>?
+    i.e. does <span class ="code-inline">o</span> have an own or inhertited property <span class ="code">'propertyName'</span>?
 
-    <span class ="code">
+    <span class ="code-inline">
         o.hasOwnProperty('propertyName')
     </span>
 
-    i.e. does <span class ="code">o</span> have an own property <span class ="code">'propertyName'</span>?
+    i.e. does <span class ="code-inline">o</span> have an own property <span class ="code-inline">'propertyName'</span>?
 
-    <span class ="code">
+    <span class ="code-inline">
         o.propetyIsEnumerable('propertyName')
-    </span>
+    </span>.
 
-    <span class ="code">
+    <span class ="code-inline">
         o.p !== undefined
     </span>
 
-    <span class ="code">o </span> may or not have a property <span class ="code">p</span>
+    <span class ="code-inline">o </span> may or not have a property <span class ="code-inline">p</span>.
 
 </p>
 
@@ -339,12 +337,12 @@ Semi colons are optional. Gotchas to watch out for:
 
     as it may return a new <span class ="code-inline">Promise</span> that resolves to a new value. This is called a chain of promises.
 
-    <span class ="code">
+    <span class ="code-inline">
         Promise.all
     </span>
     takes a list of promises which resolves when all promises resolve in parallel.
 
-    <span class ="code">
+    <span class ="code-inline">
         Promise.resolve
     </span>
     returns a promise that is immediately resolved.
