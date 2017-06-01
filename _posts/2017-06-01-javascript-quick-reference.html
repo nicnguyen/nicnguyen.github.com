@@ -6,9 +6,7 @@ description: JavaScript quick reference.
 ---
 
 <p>
-    A summary of JS features from ES5 to ES6 and some ES3. Note that there was no ES4.
-
-    I accept no responsibility for errors on this page.
+     Notes on JS features from ES5 to ES6 and some ES3. Note that there was no ES4.
 </p>
 
 <span class="subtitle"> Semi colons.</span>
@@ -23,9 +21,8 @@ Semi colons are optional. Gotchas to watch out for:
         var f = () => ({x:2})
         f
         ({x:1}).x
-
-        evaluates to 2.
     </span>
+    evaluates to 2.
 
     I prefer to omit semi-colons.
 </p>
@@ -42,9 +39,7 @@ Semi colons are optional. Gotchas to watch out for:
         function F() { this.prototype = ...}
         new F()
     </span>
-
     or
-
     <span class ="code">
         F.prototype = ...
     </span>
@@ -65,11 +60,11 @@ Semi colons are optional. Gotchas to watch out for:
 <span class="subtitle"> Object methods </span>
 <p>
     <span class ="code-inline">valueOf</span> is used in string conversions i.e.
-    <span class ="code">
+    <span class ="code-inline">
         '' + x
     </span>
     is like
-    <span class ="code">
+    <span class ="code-inline">
         x.valueOf().toString()
     </span>
     <span class ="code-inline">toString</span> defaults to
@@ -81,11 +76,11 @@ Semi colons are optional. Gotchas to watch out for:
 
     <span class ="code-inline">toJson</span>
     The object is used when serialising object to strings i.e.
-    <span class ="code">
+    <span class ="code-inline">
         JSON.stringify(v)
     </span>
     is like
-    <span class ="code">
+    <span class ="code-inline">
     JSON.stringify(v.toJson())
     </span>
 
@@ -99,7 +94,7 @@ Semi colons are optional. Gotchas to watch out for:
     <span class ="code">
         Array.prototype.concat.apply([], [[1,2], [3,4]])
     </span>
-    returns <span class ="code-inline">[1,2,3,4]</span>
+    returns <span class ="code-inline">[1,2,3,4]</span>.
     <span class ="code-inline">bind</span> returns a new function with partially applied arguments.
     Its first argument is <span class ="code-inline">this</span>. This is like currying in functional programming.
 </p>
@@ -115,7 +110,7 @@ Semi colons are optional. Gotchas to watch out for:
     <span class ="code">
         o[p] = v
     </span>
-    values are a primitive datatype or a function type - if the latter then it is a method of <span class ="code">o</span>
+    values are a primitive datatype or a function type - if the latter then it is a method of <span class ="code-inline">o</span>
 </p>
 
 <span class="subtitle"> Types.</span>
