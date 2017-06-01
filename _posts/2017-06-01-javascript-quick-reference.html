@@ -72,10 +72,10 @@ Semi colons are optional. Gotchas to watch out for:
     to extract the class of an object i.e.
     <span class ="code-inline">
         Object.prototype.toString.call(o)
-    </span>
+    </span>.
 
     <span class ="code-inline">toJson</span>
-    The object is used when serialising object to strings i.e.
+     is used when serialising object to strings i.e.
     <span class ="code-inline">
         JSON.stringify(v)
     </span>
@@ -103,11 +103,11 @@ Semi colons are optional. Gotchas to watch out for:
 <p>
     An object is a dynamic set of key/value properties with unique keys.
     Set a property <span class ="code-inline">p</span> on <span class ="code-inline">o</span> to value <span class ="code-inline">v</span>:
-    <span class ="code">
+    <span class ="code-inline">
         o.p = v
     </span>
     or
-    <span class ="code">
+    <span class ="code-inline">
         o[p] = v
     </span>
     values are a primitive datatype or a function type - if the latter then it is a method of <span class ="code-inline">o</span>
@@ -119,7 +119,6 @@ Semi colons are optional. Gotchas to watch out for:
     <span class ="code-inline">
         number
     </span>,
-
     <span class ="code-inline">
         string
     </span>,
@@ -140,7 +139,7 @@ Semi colons are optional. Gotchas to watch out for:
 
 <span class="subtitle"> Arrays.</span>
 <p>
-    An array is created as a literal [] or with new Array().
+    An array is created as a literal <span class ="code-inline">[]</span> or with <span class ="code-inline">new Array()</span>.
     An array-like object has a non-enumerable length property and enumerable numeric keys >= 0 and <= Infinity.
     Such an object can be handled as an array but won't offer random access times expected from a real array.
 
@@ -163,10 +162,10 @@ Semi colons are optional. Gotchas to watch out for:
 <p>
     JS has prototype based inheritence.
 
-    An object's prototype can be accessed via the non-standard property:
+    An object's prototype can be accessed via the non-standard property,
     <span class ="code-inline">
         __prototype__
-    </span>
+    </span>.
 
     This property is set by the runtime as defined above during object creation.
 
@@ -204,30 +203,25 @@ Semi colons are optional. Gotchas to watch out for:
     <span class ="code-inline">
         writable
     </span>
-
     i.e. is it not readonly. An Object with a get method and without a set method is readonly by default.
 
     <span class ="code-inline">
         enumerable
     </span>
-
     i.e. is the property returned by
     <span class ="code-inline">
         Object.keys
     </span>
     and iterable in a for loop.
-
     <span class ="code-inline">
         configurable
     </span>
-
     i.e. can it be deleted.
 
     <span class ="code-inline">
         Object.preventExtensions(o)
-    </span>.
-
-    prevents new properties being added to <span class ="code">o</span>.
+    </span>
+    prevents new properties being added to <span class ="code-inline">o</span>.
 
     <span class ="code-inline">
         Object.seal()
@@ -249,7 +243,7 @@ Semi colons are optional. Gotchas to watch out for:
         'propertyName' in o
     </span>
 
-    i.e. does <span class ="code-inline">o</span> have an own or inhertited property <span class ="code">'propertyName'</span>?
+    i.e. does <span class ="code-inline">o</span> have an own or inhertited property <span class ="code-inline">'propertyName'</span>?
 
     <span class ="code-inline">
         o.hasOwnProperty('propertyName')
@@ -479,12 +473,12 @@ Semi colons are optional. Gotchas to watch out for:
 <span class="subtitle"> Strict mode. </span>
 <p>
     A single line at the start of a function body or block:
-    <span class ="code">
+    <span class ="code-inline">
         'use strict';
     </span>
     enables strict mode.
 
-    This will e.g. enable more <span class ="code-inline">ReferenceError</span>s, <span class ="code">TypeError</span>s at runtime and
-    disallow constructs such as <span class ="code">with</span> expressions.
-    <span class ="code">this</span> inside a function body is never bound to the global object in strict mode.
+    This will e.g. enable more <span class ="code-inline">ReferenceError</span>s, <span class ="code-inline">TypeError</span>s at runtime and
+    disallow constructs such as <span class ="code-inline">with</span> expressions.
+    <span class ="code-inline">this</span> inside a function body is never bound to the global object in strict mode.
 </p>
