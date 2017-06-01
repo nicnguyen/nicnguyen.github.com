@@ -29,24 +29,17 @@ Semi colons are optional. Gotchas to watch out for:
 
 <span class="subtitle"> Objects creation</span>
 <p>
-    Literal - prototype defaults to Object:
-    <span class ="code">
-        {}
-    </span>
+    Literal - prototype defaults to Object: <span class ="code-inline">{}</span>
 
     Function constructor - prototype defaults to Object if not set.
     <span class ="code">
         function F() { this.prototype = ...}
         new F()
     </span>
-    or
-    <span class ="code">
-        F.prototype = ...
-    </span>
+    or set the prototype as  <span class ="code-inline"> F.prototype = ... </span>
 
-    ES5 creation:
-    <span class ="code">
-        Object.create(prototype, propertyDescriptors)
+    ES5 creation: <span class ="code-inline">
+        Object.create(prototype, propertyDescriptors).
     </span>
 
     When prototype is null then the new object's prototype is undefined.
@@ -372,11 +365,9 @@ Semi colons are optional. Gotchas to watch out for:
         }
     </span>
 
-    <span class ="code">
+    <span class ="code-inline">
         for (let i of c) console.log(i)
-    </span>
-
-    logs 0 to 9.
+    </span> logs 0 to 9.
 </p>
 
 <span class="subtitle"> Generators (ES5). </span>
@@ -478,7 +469,7 @@ Semi colons are optional. Gotchas to watch out for:
     </span>
     enables strict mode.
 
-    This will e.g. enable more <span class ="code-inline">ReferenceErrors,</span> <span class ="code-inline">TypeErrors</span> at runtime and
+    This will e.g. enable more <span class ="code-inline">ReferenceErrors</span> and <span class ="code-inline">TypeErrors</span> at runtime and
     disallow constructs such as <span class ="code-inline">with</span> expressions.
     <span class ="code-inline">this</span> inside a function body is never bound to the global object in strict mode.
 </p>
