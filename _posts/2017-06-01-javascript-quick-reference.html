@@ -117,27 +117,27 @@ Semi colons are optional. Gotchas to watch out for:
 <p>
     The JS primitive types are:
     <span class ="code-inline">
-        number
-    </span>,
+        number,
+    </span>
     <span class ="code-inline">
-        string
-    </span>,
+        string,
+    </span>
     <span class ="code-inline">
-        boolean
-    </span>.
+        boolean.
+    </span>
 
     All non-primitive object have type:
     <span class ="code-inline">
-    object
-    </span>.
+    object.
+    </span>
     The type of undefined is
     <span class ="code-inline">
-    undefined
-    </span>.
+    undefined.
+    </span>
 </p>
 
 
-<span class="subtitle"> Arrays.</span>
+<span class="subtitle"> Arrays</span>
 <p>
     An array is created as a literal <span class ="code-inline">[]</span> or with <span class ="code-inline">new Array()</span>.
     An array-like object has a non-enumerable length property and enumerable numeric keys >= 0 and <= Infinity.
@@ -158,7 +158,7 @@ Semi colons are optional. Gotchas to watch out for:
     </span>
 </p>
 
-<span class="subtitle"> Inheritance. </span>
+<span class="subtitle"> Inheritance </span>
 <p>
     JS has prototype based inheritence.
 
@@ -227,14 +227,14 @@ Semi colons are optional. Gotchas to watch out for:
         Object.seal()
     </span>.
 
-    As <span class ="code-inline">preventExtensions</span>, but also prevents property deletion and further configuration.
+    As <span class ="code-inline">preventExtensions,</span> but also prevents property deletion and further configuration.
     Properties are still writable.
 
     <span class ="code-inline">
         Object.freeze(o)
     </span>
 
-    As <span class ="code-inline">seal</span>, but also makes all properties read only.
+    As <span class ="code-inline">seal,</span> but also makes all properties read only.
 </p>
 
 <span class="subtitle"> Property membership testing. </span>
@@ -252,11 +252,11 @@ Semi colons are optional. Gotchas to watch out for:
     i.e. does <span class ="code-inline">o</span> have an own property <span class ="code-inline">'propertyName'</span>?
 
     <span class ="code-inline">
-        o.propetyIsEnumerable('propertyName')
-    </span>.
+        o.propetyIsEnumerable('propertyName'). Is the property returned in <span class ="code-inline">Object.keys</span> and iterable in a <span class ="code-inline">for of</span> loop.
+    </span>
 
     <span class ="code-inline">
-        o.p !== undefined
+        o.p !== undefined.
     </span>
 
     <span class ="code-inline">o </span> may or not have a property <span class ="code-inline">p</span>.
@@ -478,7 +478,7 @@ Semi colons are optional. Gotchas to watch out for:
     </span>
     enables strict mode.
 
-    This will e.g. enable more <span class ="code-inline">ReferenceError</span>s, <span class ="code-inline">TypeError</span>s at runtime and
+    This will e.g. enable more <span class ="code-inline">ReferenceErrors,</span> <span class ="code-inline">TypeErrors</span> at runtime and
     disallow constructs such as <span class ="code-inline">with</span> expressions.
     <span class ="code-inline">this</span> inside a function body is never bound to the global object in strict mode.
 </p>
