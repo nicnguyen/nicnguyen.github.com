@@ -28,7 +28,6 @@ Semi colons are optional. Gotchas to watch out for:
 </p>
 
 <span class="subtitle"> Object creation</span>
-<p>
     <p>
         Literal - prototype defaults to Object: <span class ="code-inline">{}.</span>
     </p>
@@ -45,10 +44,9 @@ Semi colons are optional. Gotchas to watch out for:
         ES5 creation: <span class ="code-inline">
             Object.create(prototype, propertyDescriptors).
         </span>
+        When prototype is null then the new object's prototype is undefined.
     </p>
 
-    When prototype is null then the new object's prototype is undefined.
-</p>
 
 <span class="subtitle"> Equals </span>
 <p>
@@ -240,24 +238,24 @@ Semi colons are optional. Gotchas to watch out for:
         'propertyName' in o
     </span>
 
-    i.e. does <span class ="code-inline">o</span> have an own or inhertited property <span class ="code-inline">'propertyName'</span>?
+    - does <span class ="code-inline">o</span> have an own or inhertited property <span class ="code-inline">'propertyName'</span>?
 
     <span class ="code-inline">
         o.hasOwnProperty('propertyName')
     </span>
 
-    i.e. does <span class ="code-inline">o</span> have an own property <span class ="code-inline">'propertyName'</span>?
+    - does <span class ="code-inline">o</span> have an own property <span class ="code-inline">'propertyName'</span>?
 
     <span class ="code-inline">
-        o.propetyIsEnumerable('propertyName').
+        o.propetyIsEnumerable('propertyName')
     </span>
-    Is the property returned in <span class ="code-inline">Object.keys</span> and iterable in a <span class ="code-inline">for of</span> loop.
+    - is the property returned in <span class ="code-inline">Object.keys</span> and iterable in a <span class ="code-inline">for of</span> loop.
 
     <span class ="code-inline">
-        o.p !== undefined.
+        o.p !== undefined
     </span>
 
-    <span class ="code-inline">o </span> may or not have a property <span class ="code-inline">p</span>.
+    - <span class ="code-inline">o </span> may or not have a property <span class ="code-inline">p</span>.
 
 </p>
 
