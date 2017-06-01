@@ -298,7 +298,7 @@ Semi colons are optional. Gotchas to watch out for:
     <span class ="code">
         new Promise(resolve => {
             setTimeout(() => resolve('timed out!'), 500)
-        }).then (message => console.log(message))
+        }).then (console.log)
     </span>
 
     Exceptions thrown during the evaluation of the promise or rejections, can be caught with the catch callback:
@@ -306,8 +306,8 @@ Semi colons are optional. Gotchas to watch out for:
     <span class ="code">
         new Promise(resolve => {
             setTimeout(() => resolve('timed out!'), 500)
-        }).then (message => console.log(message))
-          .catch (e => console.error(e))
+        }).then (console.log)
+          .catch (console.error)
     </span>
 
     Recall that the monad's bind function looks like this
