@@ -29,18 +29,23 @@ Semi colons are optional. Gotchas to watch out for:
 
 <span class="subtitle"> Object creation</span>
 <p>
-    Literal - prototype defaults to Object: <span class ="code-inline">{}</span>
+    <p>
+        Literal - prototype defaults to Object: <span class ="code-inline">{}.</span>
+    </p>
+    <p>
+        Function constructor - prototype defaults to Object if not set.
+        <span class ="code">
+            function F() { this.prototype = ...}
+            new F()
+        </span>
+        or set the prototype as  <span class ="code-inline"> F.prototype = ... </span>
+    </p>
 
-    Function constructor - prototype defaults to Object if not set.
-    <span class ="code">
-        function F() { this.prototype = ...}
-        new F()
-    </span>
-    or set the prototype as  <span class ="code-inline"> F.prototype = ... </span>
-
-    ES5 creation: <span class ="code-inline">
-        Object.create(prototype, propertyDescriptors).
-    </span>
+    <p>
+        ES5 creation: <span class ="code-inline">
+            Object.create(prototype, propertyDescriptors).
+        </span>
+    </p>
 
     When prototype is null then the new object's prototype is undefined.
 </p>
