@@ -93,6 +93,9 @@ Semi colons are optional. Gotchas to watch out for:
     returns <span class ="code-inline">[1,2,3,4]</span>.
     <span class ="code-inline">bind</span> returns a new function with partially applied arguments.
     Its first argument is <span class ="code-inline">this</span> and is a bit like currying in functional programming.
+
+    Object.defineProperty, Object.defineProperties,
+    Object.getOwnPropertyDescriptor(), Object.getOwnPropertyNames(obj)
 </p>
 
 <span class="subtitle"> Object properties </span>
@@ -107,6 +110,8 @@ Semi colons are optional. Gotchas to watch out for:
         o[p] = v.
     </span>
     JS values are either primitive datatypes or function types - if the latter then it is a method of <span class ="code-inline">o.</span>
+
+    In ES5, an object's key/value array is returned by <span class ="code-inline">Object.entires(o).</span>
 </p>
 
 <span class="subtitle"> Types</span>
@@ -163,9 +168,9 @@ Semi colons are optional. Gotchas to watch out for:
 
     Alter an array in-place : <span class='code-inline'>array.splice(start (, numberDeletions (,newElements)*)+)</span>
 
-    ES5: filter, map, reduce, some, every,
+    ES5 additions: <span class ="code-inline">filter</span>, <span class ="code-inline">map</span>, <span class ="code-inline">reduce</span>, <span class ="code-inline">some</span>, <span class ="code-inline">every.</span>
 
-    ES6:
+    ES6 - find first occurance of element matching a predicate <span class ="code-inline">find(elementPredicate)</span>, <span class ="code-inline">findIndex(elementPredicate).</span>
 </p>
 
 <span class="subtitle"> Inheritance </span>
@@ -242,6 +247,8 @@ Semi colons are optional. Gotchas to watch out for:
     </span>
 
     is as <span class ="code-inline">seal,</span> but also makes all properties read only.
+
+    These can be tested with <span class ="code-inline">Object.isExtensible</span>, <span class ="code-inline">Object.isSealed</span> and <span class ="code-inline">Object.isFrozen</span>.
 </p>
 
 <span class="subtitle"> Property membership testing. </span>
