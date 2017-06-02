@@ -265,7 +265,7 @@ Semi colons are optional. Gotchas to watch out for:
     i.e. If a variable is used before it is declared then that's okay!
     Each function scope introduces a new scope on the stack with normal shadowing rules.
 
-    ES5 introduced familiar block scope through let bindings. e.g.
+    ES6 introduced familiar block scope through let bindings. e.g.
 
     <span class ="code">
         let( x = v) {
@@ -283,7 +283,7 @@ Semi colons are optional. Gotchas to watch out for:
 
 </p>
 
-<span class="subtitle"> Promise (ES5). </span>
+<span class="subtitle"> Promise (ES6). </span>
 <p>
     Promise is a monad like object for writing asynchronous code that avoids callback hell.
 
@@ -345,10 +345,10 @@ Semi colons are optional. Gotchas to watch out for:
     (i.e. the syntactic position of the function).
     Free variables are the variables in the function body which are not in the bound variables, which are the functions list of formal parameters.
 
-    <span class ="code-inline">this</span> inside an ES5 Fat arrow function is bound at the point of declaration and cannot be changed - contrasting with an ES3 function declaration.
+    <span class ="code-inline">this</span> inside an ES6 Fat arrow function is bound at the point of declaration and cannot be changed - contrasting with an ES3 function declaration.
 </p>
 
-<span class="subtitle"> Iterable protocol (ES5). </span>
+<span class="subtitle"> Iterable protocol (ES6). </span>
 <p>
     An object can appear in a <span class ="code-inline">for of</span> loop when it implements the iterable protocol:
 
@@ -373,7 +373,7 @@ Semi colons are optional. Gotchas to watch out for:
     </span> logs 0 to 9.
 </p>
 
-<span class="subtitle"> Generators (ES5). </span>
+<span class="subtitle"> Generators (ES6). </span>
 <p>
     A generator function yields many values:
     <span class ="code">
