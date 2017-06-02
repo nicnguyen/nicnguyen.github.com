@@ -93,8 +93,6 @@ Semi colons are optional. Gotchas to watch out for:
     returns <span class ="code-inline">[1,2,3,4]</span>.
     <span class ="code-inline">bind</span> returns a new function with partially applied arguments.
     Its first argument is <span class ="code-inline">this</span> and is a bit like currying in functional programming.
-
-    <span class="code-inline">Object.getOwnPropertyNames(o)</span> returns an array of all own properties including those with enumerable set to false.
 </p>
 
 <span class="subtitle"> Object properties </span>
@@ -110,7 +108,11 @@ Semi colons are optional. Gotchas to watch out for:
     </span>
     JS values are either primitive datatypes or function types - if the latter then it is a method of <span class ="code-inline">o.</span>
 
-    In ES5, an object's key/value array is returned by <span class ="code-inline">Object.entries(o).</span>
+    In ES5, an object's enumerable key/value pairs is returned in an array of arrays by <span class ="code-inline">Object.entries(o).</span>
+
+    <span class="code-inline">Object.getOwnPropertyNames(o)</span> returns an array of all own properties including those with enumerable set to false.
+
+    <span class="code-inline">Object.keys</span> should be called getOwnEnumerableKeys.
 </p>
 
 <span class="subtitle"> Types</span>
@@ -522,6 +524,7 @@ Semi colons are optional. Gotchas to watch out for:
 <span class="subtitle"> Other favourite ES6 features. </span>
 <p>
     Property shorthand notation: <span class='code-inline'>{a,b}.</span>
+    Computed properties: <span class='code-inline'>{[e]:v}.</span>
     Spread operators for arrays and objects:
     <span class='code-inline'>[...a, ...b]</span> and
     <span class='code-inline'>{...a, ...b}.</span>
@@ -530,4 +533,11 @@ Semi colons are optional. Gotchas to watch out for:
     <span class='code-inline'>[a1,a2, ...as] = array</span>
     and for objects:
     <span class='code-inline'>{p1,p2} = o.</span>
+    Deep matching: <span class='code-inline'>{a:{b}} = o.</span>
+    Default arguments: <span class='code-inline'>function(x = {}){}.</span>
+    Matching arguments: <span class='code-inline'>function({a,b}){}.</span>
+    String literals (interpolation): <span class='code-inline'>`Hello ${name}!`.</span>
+    Multiline strings: <span class='code'>`Hello
+        ${name}!
+    `</span>
 </p>
