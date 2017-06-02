@@ -106,7 +106,7 @@ Semi colons are optional. Gotchas to watch out for:
     <span class ="code-inline">
         o[p] = v.
     </span>
-    Values are a primitive datatype or a function type - if the latter then it is a method of <span class ="code-inline">o.</span>
+    JS values are either primitive datatypes or function types - if the latter then it is a method of <span class ="code-inline">o.</span>
 </p>
 
 <span class="subtitle"> Types</span>
@@ -122,7 +122,7 @@ Semi colons are optional. Gotchas to watch out for:
         boolean.
     </span>
 
-    All non-primitive object have type:
+    All non-primitive objects have type:
     <span class ="code-inline">
     object.
     </span>
@@ -180,11 +180,11 @@ Semi colons are optional. Gotchas to watch out for:
 
     In an object function constructor - this refers to the newly created object.
 
-    In a top level function this refers to the global object in non strict mode or is undefined in strict mode.
+    In a top level function <span class ="code-inline">this</span> refers to the global object in non strict mode or is undefined in strict mode.
 
-    In a method - this refers to the object on which the method is a property.
+    In a method - <span class ="code-inline">this</span> refers to the object on which the method is a property.
 
-    Since this is not a variable - it is not captured by a closure and must be assigned to a new variable e.g self - in order to be captured.
+    Since <span class ="code-inline">this</span> is not a variable - it is not captured by a closure and must be assigned to a new variable e.g self - in order to be captured.
 </p>
 
 <span class="subtitle"> arguments </span>
@@ -199,7 +199,7 @@ Semi colons are optional. Gotchas to watch out for:
     <span class ="code-inline">
         writable
     </span>
-    i.e. is it not readonly. An Object with a get method and without a set method is readonly by default.
+    i.e. is it not readonly. An object with a get method and without a set method is readonly by default.
 
     <span class ="code-inline">
         enumerable
@@ -238,18 +238,18 @@ Semi colons are optional. Gotchas to watch out for:
         'propertyName' in o
     </span>
 
-    - does <span class ="code-inline">o</span> have an own or inhertited property <span class ="code-inline">'propertyName'</span>?
+    - does <span class ="code-inline">o</span> have an own or inhertited property?
 
     <span class ="code-inline">
         o.hasOwnProperty('propertyName')
     </span>
 
-    - does <span class ="code-inline">o</span> have an own property <span class ="code-inline">'propertyName'</span>?
+    - does <span class ="code-inline">o</span> have an own property?
 
     <span class ="code-inline">
         o.propetyIsEnumerable('propertyName')
     </span>
-    - is the property returned in <span class ="code-inline">Object.keys</span> and iterable in a <span class ="code-inline">for of</span> loop.
+    - is the property returned in <span class ="code-inline">Object.keys</span> and iterable in a <span class ="code-inline">for of</span> loop?
 
     <span class ="code-inline">
         o.p !== undefined
@@ -285,9 +285,9 @@ Semi colons are optional. Gotchas to watch out for:
 
 <span class="subtitle"> Promise (ES6). </span>
 <p>
-    Promise is a monad like object for writing asynchronous code that avoids callback hell.
+    A promise is a monad like object for writing asynchronous code that avoids callback hell.
 
-    Its constructor takes a higher order function with parameters resolve, reject and error functions.
+    Its constructor takes a higher order function (called an executor) with function parameters resolve, reject and error.
 
     e.g. this code starts running a new promise that resolves to a string value after 0.5 seconds.
     <span class ="code">
@@ -343,7 +343,7 @@ Semi colons are optional. Gotchas to watch out for:
 
     The free variables in a function scope are closed under the lexical scope
     (i.e. the syntactic position of the function).
-    Free variables are the variables in the function body which are not in the bound variables, which are the functions list of formal parameters.
+    Free variables are the variables in the function body which are not in the bound variables, i.e. the functions list of formal parameters.
 
     <span class ="code-inline">this</span> inside an ES6 Fat arrow function is bound at the point of declaration and cannot be changed - contrasting with an ES3 function declaration.
 </p>
