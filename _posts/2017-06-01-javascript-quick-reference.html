@@ -82,9 +82,9 @@ Semi colons are optional. Gotchas to watch out for:
 
     and defaults to identity.
 
-    <span class ="code-inline">call</span> invokes a function with specific binding to this and remaining arguments.
+    <span class ="code-inline">call</span> invokes a function with a specific binding to <span class ="code-inline">this</span> and remaining arguments.
 
-    <span class ="code-inline">apply</span> is like call but takes its arguments as an array.
+    <span class ="code-inline">apply</span> is like <span class ="code-inline">call</span> but takes its arguments as an array.
 
     e.g. useful to flatten an array of arrays:
     <span class ="code">
@@ -92,7 +92,7 @@ Semi colons are optional. Gotchas to watch out for:
     </span>
     returns <span class ="code-inline">[1,2,3,4]</span>.
     <span class ="code-inline">bind</span> returns a new function with partially applied arguments.
-    Its first argument is <span class ="code-inline">this</span>. This is like currying in functional programming.
+    Its first argument is <span class ="code-inline">this</span> and is a bit like currying in functional programming.
 </p>
 
 <span class="subtitle"> Object properties </span>
@@ -156,16 +156,24 @@ Semi colons are optional. Gotchas to watch out for:
     <span class ="code-inline">
         [,,,]
     </span>
+
+    Return a new subarray : <span class='code-inline'>array.slice(start, end).</span>
+    <span class='code-inline'>array.slice(start)</span> slices to the end.
+    <span class='code-inline'>array.slice()</span> copies the array.
+
+    Alter an array in-place : <span class='code-inline'>array.splice(start (, numberDeletions (,newElements)*)+)</span>
+
+    ES5: filter, map, reduce, some, every,
+
+    ES6:
 </p>
 
 <span class="subtitle"> Inheritance </span>
 <p>
     JS has prototype based inheritence.
 
-    An object's prototype can be accessed via the non-standard property,
-    <span class ="code-inline">
-        __prototype__
-    </span>.
+    An object's prototype can be accessed in ES5 with: <span class ="code-inline">Object.getPrototypeOf(o)</span>
+    or through nonstandard properties such as <span class ="code-inline">__prototype__.</span>
 
     This property is set by the runtime as defined above during object creation.
 
@@ -479,4 +487,22 @@ Semi colons are optional. Gotchas to watch out for:
     This will e.g. enable more <span class ="code-inline">ReferenceErrors</span> and <span class ="code-inline">TypeErrors</span> at runtime and
     disallow constructs such as <span class ="code-inline">with</span> expressions.
     <span class ="code-inline">this</span> inside a function body is never bound to the global object in strict mode.
+</p>
+
+<span class="subtitle"> Proxies (ES6) </span>
+<p>
+
+</p>
+
+<span class="subtitle"> Other favourite ES6 features. </span>
+<p>
+    Property shorthand notation: <span class='code-inline'>{a,b}.</span>
+    Spread operators for arrays and objects:
+    <span class='code-inline'>[...a, ...b]</span> and
+    <span class='code-inline'>{...a, ...b}.</span>
+    The latter is like <span class='code-inline'>Object.assign({}, a, b)</span> in ES5.
+    Assignment destructuring for arrays:
+    <span class='code-inline'>[a1,a2, ...as] = array</span>
+    and for objects:
+    <span class='code-inline'>{p1,p2} = o.</span>
 </p>
