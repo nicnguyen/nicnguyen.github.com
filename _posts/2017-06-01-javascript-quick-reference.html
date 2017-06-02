@@ -94,8 +94,7 @@ Semi colons are optional. Gotchas to watch out for:
     <span class ="code-inline">bind</span> returns a new function with partially applied arguments.
     Its first argument is <span class ="code-inline">this</span> and is a bit like currying in functional programming.
 
-    Object.defineProperty, Object.defineProperties,
-    Object.getOwnPropertyDescriptor(), Object.getOwnPropertyNames(obj)
+
 </p>
 
 <span class="subtitle"> Object properties </span>
@@ -249,6 +248,25 @@ Semi colons are optional. Gotchas to watch out for:
     is as <span class ="code-inline">seal,</span> but also makes all properties read only.
 
     These can be tested with <span class ="code-inline">Object.isExtensible</span>, <span class ="code-inline">Object.isSealed</span> and <span class ="code-inline">Object.isFrozen</span>.
+
+    Properties are configured with:
+
+    <span class ="code-inline">Object.defineProperty</span> and <span class ="code-inline">Object.defineProperties.</span>
+    The first takes an object to extend, a property name and a descriptor definition:
+    <span class ="code">
+    {
+        writable: boolean,
+        configurable: boolean,
+        enumerable: boolean,
+        value: any,
+        get: void => any,
+        set: any => void
+    }
+    </span>
+    The latter takes its descriptor config as an object with each property key mapped to a descriptor definition.
+    An own property descritpor is retrieved with <span class ="code-inline">
+    Object.getOwnPropertyDescriptor()
+    </span>
 </p>
 
 <span class="subtitle"> Property membership testing. </span>
