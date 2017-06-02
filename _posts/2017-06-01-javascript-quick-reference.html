@@ -130,6 +130,10 @@ Semi colons are optional. Gotchas to watch out for:
     <span class ="code-inline">
     undefined.
     </span>
+
+    The type of <span class ="code-inline">null</span> is <span class ="code-inline">object</span>.
+
+
 </p>
 
 
@@ -199,12 +203,12 @@ Semi colons are optional. Gotchas to watch out for:
     <span class ="code-inline">
         writable
     </span>
-    i.e. is it not readonly. An object with a get method and without a set method is readonly by default.
+    - is it not readonly? An object with a get method and without a set method is readonly by default.
 
     <span class ="code-inline">
         enumerable
     </span>
-    i.e. is the property returned by
+    - is the property returned by
     <span class ="code-inline">
         Object.keys
     </span>
@@ -212,7 +216,7 @@ Semi colons are optional. Gotchas to watch out for:
     <span class ="code-inline">
         configurable
     </span>
-    i.e. can it be deleted.
+    - can it be deleted?
 
     <span class ="code-inline">
         Object.preventExtensions(o)
@@ -343,7 +347,7 @@ Semi colons are optional. Gotchas to watch out for:
 
     The free variables in a function scope are closed under the lexical scope
     (i.e. the syntactic position of the function).
-    Free variables are the variables in the function body which are not in the bound variables, i.e. the functions list of formal parameters.
+    Free variables are the variables in the function body which are not in the bound variables, i.e. the function's list of formal parameters.
 
     <span class ="code-inline">this</span> inside an ES6 Fat arrow function is bound at the point of declaration and cannot be changed - contrasting with an ES3 function declaration.
 </p>
