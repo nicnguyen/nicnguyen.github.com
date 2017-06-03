@@ -50,7 +50,7 @@ Semi colons are optional. Gotchas to watch out for:
 
 <span class="subtitle"> Equals </span>
 <p>
-    <span class ="code-inline">==</span> performs a type conversion. <span class ="code-inline">===</span> is stricter and returns false for all pairs of value that have different types.
+    <span class ="code-inline">==</span> performs a type conversion. <span class ="code-inline">===</span> is stricter and returns false for all pairs of values that have different types.
 </p>
 
 <span class="subtitle"> Object methods </span>
@@ -108,7 +108,7 @@ Semi colons are optional. Gotchas to watch out for:
     <span class ="code-inline">
         o[p] = v.
     </span>
-    JS values are either primitive datatypes or function types - if the latter then it is a method of <span class ="code-inline">o.</span>
+    JS values are either objects, values of primitive type (numbers, strings, boolean),  or functions - if the latter then it is a method of <span class ="code-inline">o.</span>
 
     In ES5, an object's enumerable key/value pairs is returned in an array of arrays by <span class ="code-inline">Object.entries(o).</span>
 
