@@ -381,10 +381,10 @@ Semi colons are optional. Gotchas to watch out for:
 
 <span class="subtitle"> Closures. </span>
 <p>
-
-    The free variables in a function scope are closed under the lexical scope
-    (i.e. the syntactic position of the function).
-    Free variables are the variables in the function body which are not in the bound variables, i.e. the function's list of formal parameters.
+    When an expression such as a function or object flows out of its current scope such as being returned from or passed to a function,
+    then its free variables are closed under the lexical scope
+    (i.e. the syntactic position of the expression).
+    Free variables are the variables in an expression that are not bound variables, i.e. the variables that appear in a function's list of formal parameters.
 
     <span class ="code-inline">this</span> inside an ES6 Fat arrow function is bound at the point of declaration and cannot be changed - contrasting with an ES3 function declaration.
 </p>
