@@ -1,0 +1,563 @@
+---
+layout: post
+title: JavaScript quick reference.
+disqus_id: js_ref
+description: JavaScript quick reference.
+---
+
+<p>
+     Notes on JS features from ES5 to ES6 and some ES3. Note that there was no ES4.
+</p>
+
+<span class="subtitle"> Semi colons</span>
+<p>
+Semi colons are optional. Gotchas to watch out for:
+    <span class ="code">
+        return
+            1;
+    </span>
+    returns undefined because of the line break.
+    <span class ="code">
+        var f = () => ({x:2})
+        f
+        ({x:1}).x
+    </span>
+    evaluates to 2.
+
+    I prefer to omit semi-colons.
+</p>
+
+<span class="subtitle"> Object creation</span>
+    <p>
+        Literal - prototype defaults to Object: <span class ="code-inline">{}.</span>
+    </p>
+    <p>
+        Function constructor - prototype defaults to Object if not set.
+        <span class ="code">
+            function F() { this.prototype = ...}
+            new F()
+        </span>
+        or set the prototype as  <span class ="code-inline"> F.prototype = ... </span>
+    </p>
+
+    <p>
+        ES5 creation: <span class ="code-inline">
+            Object.create(prototype, propertyDescriptors).
+        </span>
+        When prototype is null then the new object's prototype is undefined.
+    </p>
+
+
+<span class="subtitle"> Equals </span>
+<p>
+    <span class ="code-inline">==</span> performs a type conversion. <span class ="code-inline">===</span> is stricter and returns false for all pairs of values that have different types.
+</p>
+
+<span class="subtitle"> Object methods </span>
+<p>
+    <span class ="code-inline">valueOf</span> is used in string conversions i.e.
+    <span class ="code-inline">
+        '' + x
+    </span>
+    is like
+    <span class ="code-inline">
+        x.valueOf().toString().
+    </span>
+    <span class ="code-inline">toString</span> defaults to
+    <span class ="code-inline">[object classname]</span> where classname is an internal property of the runtime but can be used
+    to extract the class of an object e.g.
+    <span class ="code-inline">
+        Object.prototype.toString.call(o).
+    </span>
+
+    <span class ="code-inline">toJson</span>
+     is used when serialising an object to a string e.g.
+    <span class ="code-inline">
+        JSON.stringify(v)
+    </span>
+    is like
+    <span class ="code-inline">
+    JSON.stringify(v.toJson())
+    </span>
+
+    and defaults to identity.
+
+    <span class ="code-inline">call</span> invokes a function with a specific binding to <span class ="code-inline">this</span> and remaining arguments.
+
+    <span class ="code-inline">apply</span> is like <span class ="code-inline">call</span> but takes its arguments as an array.
+
+    e.g. useful to flatten an array of arrays:
+    <span class ="code">
+        Array.prototype.concat.apply([], [[1,2], [3,4]])
+    </span>
+    returns <span class ="code-inline">[1,2,3,4]</span>.
+    <span class ="code-inline">bind</span> returns a new function with partially applied arguments.
+    Its first argument is <span class ="code-inline">this</span> and is a bit like currying in functional programming.
+
+    Check if <span class ="code-inline">x</span> is <span class ="code-inline">NaN</span>: <span class ="code-inline">x != x.</span> or <span class ="code-inline">isNaN(x)</span>. In ES5: <span class ="code-inline">Object.is(x, NaN)</span>.
+</p>
+
+<span class="subtitle"> Object properties </span>
+<p>
+    An object is a dynamic set of key/value properties with unique keys.
+    Set a property <span class ="code-inline">p</span> on <span class ="code-inline">o</span> to value <span class ="code-inline">v</span>:
+    <span class ="code-inline">
+        o.p = v
+    </span>
+    or
+    <span class ="code-inline">
+        o[p] = v.
+    </span>
+    JS values are either objects, values of primitive type (numbers, strings, boolean),  or functions - if the latter then it is a method of <span class ="code-inline">o.</span>
+
+    In ES5, an object's enumerable key/value pairs is returned in an array of arrays by <span class ="code-inline">Object.entries(o).</span>
+
+    <span class="code-inline">Object.getOwnPropertyNames(o)</span> returns an array of all own properties including those with enumerable set to false.
+
+    <span class="code-inline">Object.keys</span> should be called getOwnEnumerableKeys.
+</p>
+
+<span class="subtitle"> Types</span>
+<p>
+    The JS primitive types are:
+    <span class ="code-inline">
+        number,
+    </span>
+    <span class ="code-inline">
+        string,
+    </span>
+    <span class ="code-inline">
+        boolean.
+    </span>
+
+    All non-primitive objects have type:
+    <span class ="code-inline">
+    object.
+    </span>
+    The type of undefined is
+    <span class ="code-inline">
+    undefined.
+    </span>
+
+    The type of <span class ="code-inline">null</span> is <span class ="code-inline">object</span>.
+
+
+</p>
+
+
+<span class="subtitle"> Arrays</span>
+<p>
+    An array is created as a literal <span class ="code-inline">[]</span> or with <span class ="code-inline">new Array()</span>.
+    An array-like object has a length property and enumerable numeric keys >= 0 and <= Infinity.
+    Such an object can be handled as an array but won't offer random access times expected from a real array.
+
+    Array methods <span class ="code-inline">push</span>, <span class ="code-inline">pop</span>, <span class ="code-inline">shift</span>,
+    <span class="code-inline">unshift</span> maintain the length property.
+
+    An array like object can be converted to an array using:
+
+    <span class ="code">
+        Array.prototype.slice.call({0:1, 1:2,length:2})
+    </span>
+
+    A sparse array literal with commas is filled with undefined values:
+    <span class ="code-inline">
+        [,,,]
+    </span>
+
+    Return a new subarray : <span class='code-inline'>array.slice(start, end).</span>
+    <span class='code-inline'>array.slice(start)</span> slices to the end.
+    <span class='code-inline'>array.slice()</span> copies the array.
+
+    Alter an array in-place : <span class='code-inline'>array.splice(start (, numberDeletions (,newElements)*)+).</span>
+
+    ES5 additions: <span class ="code-inline">filter</span>, <span class ="code-inline">map</span>, <span class ="code-inline">reduce</span>, <span class ="code-inline">some</span>, <span class ="code-inline">every.</span>
+
+    ES6 - find first occurance of element matching a predicate <span class ="code-inline">find(p)</span>, <span class ="code-inline">findIndex(p).</span>
+</p>
+
+<span class="subtitle"> Inheritance </span>
+<p>
+    JS has prototype based inheritence.
+
+    An object's prototype can be accessed in ES5 with: <span class ="code-inline">Object.getPrototypeOf(o)</span>
+    or through nonstandard properties such as <span class ="code-inline">__prototype__.</span>
+
+    This property is set by the runtime as defined above during object creation.
+
+    A property access on an object traverses its prototype chain returning the first matching property.
+
+    An overriden property overshadows any property with the same name in the prototype chain.
+
+    Adding or removing a property on the prototype (which may be shared with many objects)
+    affects all the objects which inherit from the prototype.
+</p>
+
+<span class="subtitle"> this </span>
+<p>
+    <span class ="code-inline">this</span> is a keyword in a function scope, not a variable.
+    Its value is dynamic and depends on the invocation context and whether strict mode is enabled.
+
+    In an object function constructor - this refers to the newly created object.
+
+    In a top level function <span class ="code-inline">this</span> refers to the global object in non strict mode or is undefined in strict mode.
+
+    In a method - <span class ="code-inline">this</span> refers to the object on which the method is a property.
+
+    Since <span class ="code-inline">this</span> is not a variable - it is not captured by a closure and must be assigned to a new variable e.g self - in order to be captured.
+</p>
+
+<span class="subtitle"> arguments </span>
+<p>
+    <span class ="code-inline">arguments</span> is a keyword inside a function body that represents an array-like object for the function arguments.
+</p>
+
+<span class="subtitle"> Property access control in ES5. </span>
+<p>
+    A property's descriptor has 3 boolean valued attributes for access control:
+
+    <span class ="code-inline">
+        writable
+    </span>
+    - is it not readonly? An object with a get method and without a set method is readonly by default.
+
+    <span class ="code-inline">
+        enumerable
+    </span>
+    - is the property returned by
+    <span class ="code-inline">
+        Object.keys
+    </span>
+    and iterable in a for loop?
+    <span class ="code-inline">
+        configurable
+    </span>
+    - can it be deleted?
+
+    <span class ="code-inline">
+        Object.preventExtensions(o)
+    </span>
+    prevents new properties being added to <span class ="code-inline">o</span>.
+
+    <span class ="code-inline">
+        Object.seal()
+    </span>
+    is as <span class ="code-inline">preventExtensions,</span> but also prevents property deletion and further configuration.
+    Properties are still writable.
+
+    <span class ="code-inline">
+        Object.freeze(o)
+    </span>
+
+    is as <span class ="code-inline">seal,</span> but also makes all properties read only.
+
+    These can be tested with <span class ="code-inline">Object.isExtensible</span>, <span class ="code-inline">Object.isSealed</span> and <span class ="code-inline">Object.isFrozen</span>.
+
+    Properties are configured with:
+
+    <span class ="code-inline">Object.defineProperty</span> and <span class ="code-inline">Object.defineProperties.</span>
+    The first takes an object to extend, a property name and a descriptor definition:
+    <span class ="code">
+    {
+        writable: boolean,
+        configurable: boolean,
+        enumerable: boolean,
+        value: any,
+        get: void => any,
+        set: any => void
+    }
+    </span>
+    The latter takes its descriptor config as an object with each property key mapped to a descriptor definition.
+    An own property descriptor is retrieved with <span class ="code-inline">
+    Object.getOwnPropertyDescriptor()
+    </span>
+</p>
+
+<span class="subtitle"> Property membership testing. </span>
+<p>
+    <span class ="code-inline">
+        'propertyName' in o
+    </span>
+
+    - does <span class ="code-inline">o</span> have an own or inhertited property?
+
+    <span class ="code-inline">
+        o.hasOwnProperty('propertyName')
+    </span>
+
+    - does <span class ="code-inline">o</span> have an own property?
+
+    <span class ="code-inline">
+        o.propetyIsEnumerable('propertyName')
+    </span>
+    - is the property returned in <span class ="code-inline">Object.keys</span> and iterable in a <span class ="code-inline">for of</span> loop?
+
+    <span class ="code-inline">
+        o.p !== undefined
+    </span>
+
+    - <span class ="code-inline">o </span> may or not have a property <span class ="code-inline">p</span>.
+
+</p>
+
+<span class="subtitle"> Scope </span>
+<p>
+    ES3 has function scope, not block scope. Furthermore, variable declarations are "hoisted" to the top of a scope.
+    i.e. if a variable is used before it is declared then that's okay!
+    Each function scope introduces a new scope on the stack with normal shadowing rules.
+
+    ES6 introduced familiar block scope through let bindings. e.g.
+
+    <span class ="code">
+        let( x = v) {
+            ...
+        }
+    </span>
+</p>
+
+<span class="subtitle"> Creating a final object in ES5? </span>
+<p>
+    Set a null prototype and freeze all properties - perhaps something like this:
+    <span class ="code">
+        Object.freeze(Object.assign(Object.create(null), {x:1}))
+    </span>
+
+</p>
+
+<span class="subtitle"> Promise (ES6). </span>
+<p>
+    A promise is a monad like object for writing asynchronous code that avoids callback hell.
+
+    Its constructor takes a higher order function (called an executor) with function parameters resolve, reject and error.
+
+    e.g. this code starts running a new promise that resolves to a string value after 0.5 seconds.
+    <span class ="code">
+        new Promise(resolve => {
+            setTimeout(() => resolve('timed out!'), 500)
+        })
+    </span>
+
+    We can capture the timeout event and its resolved value with a callback on the promise:
+
+    <span class ="code">
+        new Promise(resolve => {
+            setTimeout(() => resolve('timed out!'), 500)
+        }).then (console.log)
+    </span>
+
+    Exceptions thrown during the evaluation of the promise or rejections, can be caught with the <span class ="code-inline">catch </span> callback:
+
+    <span class ="code">
+        new Promise(resolve => {
+            setTimeout(() => resolve('timed out!'), 500)
+        }).then (console.log)
+          .catch (console.error)
+    </span>
+
+    Recall that the monad's bind function looks like this
+
+    <span class ="code">
+        Ma -> a -> Mb -> Mb
+    </span>
+
+    The <span class ="code-inline"> Promise.then </span> method follows this pattern, which has type
+
+    <span class ="code">
+        a -> Mb -> Mb
+    </span>
+
+    as it may return a new <span class ="code-inline">Promise</span> that resolves to a new value. This is called a chain of promises.
+
+    <span class ="code-inline">
+        Promise.all
+    </span>
+    takes a list of promises which resolves when all promises resolve in parallel.
+
+    <span class ="code-inline">
+        Promise.resolve
+    </span>
+    returns a promise that is immediately resolved.
+</p>
+
+<span class="subtitle"> Closures. </span>
+<p>
+    When an expression such as a function or object flows out of its current scope such as being returned from or passed to a function,
+    then its free variables are closed under the lexical scope
+    (i.e. the syntactic position of the expression).
+    Free variables are the variables in an expression that are not bound variables, i.e. the variables that appear in a function's list of formal parameters.
+
+    <span class ="code-inline">this</span> inside an ES6 Fat arrow function is bound at the point of declaration and cannot be changed - contrasting with an ES3 function declaration.
+</p>
+
+<span class="subtitle"> Iterable protocol (ES6). </span>
+<p>
+    An object can appear in a <span class ="code-inline">for of</span> loop when it implements the iterable protocol:
+
+    <span class ="code">
+        let c = {
+            [Symbol.iterable]() {
+                let start = 0
+                return {
+                    next()  {
+                        return {
+                            value: start++,
+                            done: start > 10
+                        }
+                    }
+                }
+            }
+        }
+    </span>
+
+    <span class ="code-inline">
+        for (let i of c) console.log(i)
+    </span> logs 0 to 9.
+</p>
+
+<span class="subtitle"> Generators (ES6). </span>
+<p>
+    A generator function yields many values:
+    <span class ="code">
+        function * values() {
+            yield 1
+            yield * [2,3,4]
+        }
+    </span>
+    and can be used in a <span class ="code-inline">for of </span> statement:
+    <span class ="code">
+        for (let v of values()) console.log(v)
+    </span>
+
+    logs 1 2 3 and 4.
+
+    A class method generator:
+
+    <span class ="code">
+        class C  {
+            * values() { }
+        }
+    </span>
+
+    Object literal method generator:
+
+    <span class ="code">
+        {
+            * values() { }
+        }
+    </span>
+
+
+    A generator implements the iterable protocol:
+
+    <span class ="code">
+        let g = values()
+        g.next() // {value: 1, done: false}
+        g.next() // {value: 2, done: false}
+    </span>
+
+    The consumer can feedback to the generator by passing a value to next:
+
+    <span class ="code">
+        g.next('hi')
+    </span>
+
+    and inside the generator this value is picked up:
+
+    <span class ="code">
+        let message = yield
+        console.log(message) // hi
+    </span>
+
+    (Note that next passes its argument to the generator as the result of the previous yield.
+    So the first value passed to the generator by next is ignored.)
+
+    Generators are used to model asynchronous control flow without callbacks.
+
+    Note that the generator yields control to the consumer and is resumed when the consumer calls next on the generator.
+
+    So the idea is for the generator to yield a promise, which
+    when resolved, the consumer passes the resolved value back to the generator with next - relinquishing control
+    to the generator with the result.
+
+    So the generator is where you may wait on an asynchronous value without blocking.
+    The consumer in this case is just a utility method that captures the promises' happy path.
+
+    e.g. using whatwg fetch:
+    <span class ="code">
+        function async(promiseIterator) {
+            let promises = promiseIterator()
+            let consume = lastResolvedValue => {
+                let promise = promises.next(lastResolvedValue)
+                if (!promise.done) {
+                    promise.value.then(consume)
+                }
+            }
+            consume()
+        }
+
+        async(function* () {
+            let data = yield fetch('/')
+            data.text().then(console.log)
+        })
+    </span>
+
+</p>
+
+<span class="subtitle"> Global object. </span>
+<p>
+    <span class ="code-inline">window</span> is the global object on client side JS.
+</p>
+
+<span class="subtitle"> Strict mode. </span>
+<p>
+    A single line at the start of a function body or block:
+    <span class ="code-inline">
+        'use strict';
+    </span>
+    enables strict mode.
+
+    This will e.g. enable more <span class ="code-inline">ReferenceErrors</span> and <span class ="code-inline">TypeErrors</span> at runtime and
+    disallow constructs such as <span class ="code-inline">with</span> expressions.
+    <span class ="code-inline">this</span> inside a function body is never bound to the global object in strict mode.
+</p>
+
+<span class="subtitle"> Proxies (ES6) </span>
+<span class="subtitle"> Classes (ES6) </span>
+<span class="subtitle"> Modules (ES6) </span>
+
+<span class="subtitle"> Other favourite ES6 features. </span>
+<p>
+    Property shorthand notation: <span class='code-inline'>{a,b}.</span>
+</p>
+<p>
+    Computed properties: <span class='code-inline'>{[e]:v}.</span>
+</p>
+<p>
+    Spread operators for arrays and objects:
+    <span class='code-inline'>[...a, ...b]</span> and
+    <span class='code-inline'>{...a, ...b}.</span>
+    The latter is like <span class='code-inline'>Object.assign({}, a, b)</span> in ES5.
+</p>
+<p>
+    Assignment destructuring for arrays:
+    <span class='code-inline'>[a1,a2, ...as] = array</span>
+    and for objects:
+    <span class='code-inline'>{p1,p2} = o.</span>
+</p>
+<p>
+    Deep matching: <span class='code-inline'>{a:{b}} = o.</span>
+</p>
+<p>
+    Default arguments: <span class='code-inline'>function(x = {}){}.</span>
+</p>
+<p>
+    Matching arguments: <span class='code-inline'>function({a,b}){}.</span>
+</p>
+<p>
+    String literals (interpolation): <span class='code-inline'>`Hello ${name}!`.</span>
+</p>
+<p>
+    Multiline strings: <span class='code'>`Hello
+        ${name}!
+    `</span>
+</p>
